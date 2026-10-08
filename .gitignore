@@ -74,3 +74,13 @@ venv.bak/
 temp/
 tmp/
 .python-version
+
+# Local backups, secrets, downloaded weights, and research artifacts
+/.upstream-update/
+/models/
+*.safetensors
+.env.*
+.pytest_cache/
+/research/data/
+/research/cache/
+/research/runs/
