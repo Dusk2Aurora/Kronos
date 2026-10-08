@@ -1,0 +1,53 @@
+{
+  "snapshot_id": "20261008T011408835523Z_7bb06df6f064",
+  "path": "research\\data\\snapshots\\20261008T011408835523Z_7bb06df6f064",
+  "data_start": "2023-12-21T08:00:00Z",
+  "evaluation_start": "2024-01-01T00:00:00Z",
+  "evaluation_end_exclusive": "2026-10-01T00:00:00Z",
+  "row_counts": {
+    "candles": 24352,
+    "funding": 3012,
+    "mark_prices": 24096,
+    "warmup_candles": 256,
+    "evaluation_candles": 24096
+  },
+  "trade_candle_missing": 0,
+  "mark_candle_missing": 0,
+  "funding_coverage": {
+    "count": 3012,
+    "first": "2024-01-01T00:00:00Z",
+    "last": "2026-09-30T16:00:00Z",
+    "missing_archive_files": [],
+    "partial_month_REST_bridge_candidates": [
+      "BTC-USDT-SWAP-fundingrates-2026-10.zip"
+    ],
+    "boundary_8h_audit_passed": true,
+    "suspected_missing_intervals": [],
+    "historical_schedule_completeness_proven": false
+  },
+  "funding_interval_counts_hours": {
+    "8.0": 3011
+  },
+  "funding_overlap": {
+    "matched_events": 280,
+    "absolute_tolerance": 1e-14,
+    "passed": true
+  },
+  "funding_mark_join": {
+    "funding_event_count": 3012,
+    "matched_event_count": 3012,
+    "off_hourly_grid_events": [],
+    "unmatched_or_ambiguous_events": [],
+    "duplicate_funding_events": [],
+    "passed": true,
+    "basis": "exact_UTC_timestamp_join_to_original_unfilled_marks"
+  },
+  "contract_volume_consistency": {
+    "BTC_per_contract": 0.01,
+    "nonzero_bars": 24352,
+    "max_abs_ratio_deviation": 1.734723475976807e-18,
+    "basis": "observed_historical_volCcy_to_vol_ratio_not_independent_exchange_specification_archive"
+  },
+  "structural_checks_passed": true,
+  "formal_evaluation_allowed": false
+}

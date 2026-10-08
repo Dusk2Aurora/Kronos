@@ -1,0 +1,91 @@
+{
+  "prepared_on": "2026-10-08",
+  "repository_commit": "76be724e9c623882aa0b92de38157d6ba7ed0715",
+  "local_environment": ".venv/Scripts/python.exe",
+  "environment_lock": "research/environment/requirements.lock.txt",
+  "environment_lock_sha256": "e9db0fb227ce0725713a67c2af0dde9e75ff4f247fd032e7f2ec79b5ca92cc63",
+  "weights": {
+    "model": {
+      "repository": "NeoQuasar/Kronos-small",
+      "revision": "901c26c1332695a2a8f243eb2f37243a37bea320",
+      "local_cache": ".upstream-update/huggingface-cache/hub/models--NeoQuasar--Kronos-small/snapshots/901c26c1332695a2a8f243eb2f37243a37bea320",
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 228,
+          "sha256": "5e0f6a605d5f81b5c9b559fe5cf716a1acb041c744e6f41bd05b097b7a685396"
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 98980656,
+          "sha256": "b082dfcbd8e8c142a725c8bbb99781802f38fec81210e13479effb32b3c3e020"
+        }
+      ]
+    },
+    "tokenizer": {
+      "repository": "NeoQuasar/Kronos-Tokenizer-base",
+      "revision": "0e0117387f39004a9016484a186a908917e22426",
+      "local_cache": ".upstream-update/huggingface-cache/hub/models--NeoQuasar--Kronos-Tokenizer-base/snapshots/0e0117387f39004a9016484a186a908917e22426",
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 301,
+          "sha256": "2366e7ccfec76cbc19cf3c4c1b9c5d901be336ca1e83f2d2292c9bff381b77a2"
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 15842368,
+          "sha256": "59d85f6af76a2c3b8240ea06cb21db4213b4eeca053f246b23e29cf832fc6bee"
+        }
+      ]
+    }
+  },
+  "backtest_engine": {
+    "name": "freqtrade",
+    "repository": "https://github.com/freqtrade/freqtrade.git",
+    "version": "2026.9",
+    "repository_commit": "1f394eaebc2f46a83d26971388628707802f8602",
+    "local_repository": "D:/file/freqtrade",
+    "local_environment": "D:/file/freqtrade/.venv/Scripts/python.exe",
+    "environment_lock": "research/freqtrade/environment/requirements.lock.txt",
+    "environment_lock_sha256": "86769df600a934735259273849bce466b15e1a0548987f45867f08427db4a642",
+    "core_modified": false,
+    "canonical_file_hashes": {
+      "research\\freqtrade\\build_reference_labels.py": "8939b79dece99aa58d0bf7c638049ce1ae6b2ef3b0c4eaefcccece1f0fbf24f9",
+      "research\\freqtrade\\config.base.json": "bb86bbffe4f5a576fe62f25f8fc1e4871f7b92c076ab9ffbb3b4b85a05d21fd9",
+      "research\\freqtrade\\config.reference.json": "13b4e6fadc5b61ffc9ba5562f255c8e9e061234fc507da3b1474184f47cc3a0c",
+      "research\\freqtrade\\config.stress.json": "0beff513f578491723a79d6021e3be3abd15baf3e694a942eb45e005ff5fff74",
+      "research\\freqtrade\\environment\\requirements.lock.txt": "86769df600a934735259273849bce466b15e1a0548987f45867f08427db4a642",
+      "research\\freqtrade\\environment\\verification.json": "07e61243131c9ac7d41780f6734feede29e2993249a71adff36408309cbf5ef4",
+      "research\\freqtrade\\import_snapshot.py": "ddee8a823b2031a1122bf8929d857d789fbbebca9cd8d18d87ac66611f6fd264",
+      "research\\freqtrade\\README.md": "68d85b8d4e3faa1c39175474e5ad94f7d459617e86499c66e55951cb287401e0",
+      "research\\freqtrade\\strategies\\KronosFixedMomentum.py": "c2f30f8d2ed991ec05f389b0428dae19a286be7a47b833230800718b8f75e25e",
+      "research\\freqtrade\\verify_import.py": "71f7e805369ba0df2d69d524eff7fa11403037c3cce75d5a1adf7ffdac6d63aa",
+      "research\\freqtrade\\verify_reference_labels.py": "63ae7f1196dbb7c5596951f37fc1e819f3803248c4b61c9d09ef80af0065b78b",
+      "research\\freqtrade\\verify_strategy.py": "acd3ae305dba867616f3a47f0d89376eef2288dc7d1a99031477aa25142cd5c7"
+    },
+    "decision_phase_smoke_report": {
+      "path": "research/initialization/freqtrade_smoke_report.json",
+      "sha256": "2b88cfc6a13f6c3a993954308b5e5954f02cc53d62a7016f7197bb61c94be5ba"
+    }
+  },
+  "data_snapshot": {
+    "id": "20261008T011408835523Z_7bb06df6f064",
+    "manifest_sha256": "bc95c980c0af73f1f304f2479bc4e8b2f697fa8902b135b976069a0c4b951448",
+    "summary": "research/initialization/data_snapshot_report.json",
+    "native_import": "research/initialization/freqtrade_import_manifest.json"
+  },
+  "data_integrity_evidence": {
+    "research\\scripts\\audit_okx_snapshot.py": "8846caa2017460b8ed557143cb6952a741c67d6bc70bf2134dd6462255f2078c",
+    "research\\scripts\\check_okx_remote_samples.py": "879edec68b9f7c1102de9ebca934581406bb72a5cb8c85556a5bbac7dd30ca65",
+    "research\\initialization\\data_integrity_audit.json": "4ce2447778b7460ab00b7c110556b413ac60b5b07368ded847c80c8ee88d23de",
+    "research\\initialization\\data_remote_recheck.json": "eb8d45c50b2ed2c1f46ecbaeed235161cbaf927eecb4ce69cfd2f08539c44cc1"
+  },
+  "data_integrity_accepted_scope": "published_official_source_coverage_and_fidelity",
+  "reference_labels": {
+    "bundle": "research\\data\\labels\\reference_labels_20261008_phase4",
+    "manifest_sha256": "47a4379d2e96d7ce2df7ee23f2c1a0fafc410ce6fac73d53b8c9439549decb86",
+    "registry": "research\\registry\\reference_labels_20261008_phase4.json",
+    "report": "research/initialization/reference_labels_report.json"
+  }
+}

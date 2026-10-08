@@ -1,0 +1,9 @@
+# Windows / Python 3.11 / CUDA 11.8 research environment.
+# Keep upstream requirements.txt unchanged.
+numpy==2.3.4
+torch==2.7.1+cu118
+ccxt==4.5.17
+scikit-learn==1.7.2
+PyYAML==6.0.3
+pytest==8.4.2
+-r ../../requirements.txt

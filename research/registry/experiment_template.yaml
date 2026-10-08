@@ -1,0 +1,44 @@
+# Experiment record template; fill before running a new trial.
+schema_version: 1
+experiment_id: null
+parent_experiment_id: null
+created_at_utc: null
+stage: null
+status: planned
+hypothesis: null
+baseline_id: null
+only_primary_change: null
+configuration:
+  path: null
+  sha256: null
+provenance:
+  repository_commit: null
+  dirty_files_and_sha256: []
+  environment_lock_sha256: null
+  version_manifest_sha256: null
+  dataset_snapshot_id: null
+  dataset_manifest_sha256: null
+  split_id: null
+  model_revision: null
+  tokenizer_revision: null
+selection:
+  seed: null
+  head_family: null
+  hyperparameters: {}
+  train_end: null
+  validation_end: null
+  calibration_end: null
+  label_end_max: null
+  locked_test_used_for_selection: false
+artifacts:
+  predictions: null
+  portfolio_ledger: null
+  metrics: null
+  audit_report: null
+result:
+  conclusion: null
+  failed_checks: []
+  failure_reason: null
+  next_step: null
+# Valid conclusions: support_further_research, no_increment,
+# insufficient_evidence, invalid_due_to_audit.

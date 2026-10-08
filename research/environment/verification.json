@@ -1,0 +1,54 @@
+{
+  "prepared_on": "2026-10-08",
+  "platform": "Windows x86_64",
+  "python": "3.11.14",
+  "interpreter": "D:\\file\\Kronos-master\\.venv\\Scripts\\python.exe",
+  "base_interpreter": "E:\\conda\\envs\\kronos",
+  "include_system_site_packages": false,
+  "upstream_requirements_modified": false,
+  "repository_commit": "76be724e9c623882aa0b92de38157d6ba7ed0715",
+  "packages": {
+    "torch": "2.7.1+cu118",
+    "numpy": "2.3.4",
+    "pandas": "2.2.2",
+    "ccxt": "4.5.17",
+    "scikit-learn": "1.7.2",
+    "PyYAML": "6.0.3",
+    "pytest": "8.4.2",
+    "huggingface-hub": "0.33.1"
+  },
+  "dependency_lock": "research/environment/requirements.lock.txt",
+  "dependency_lock_sha256": "e9db0fb227ce0725713a67c2af0dde9e75ff4f247fd032e7f2ec79b5ca92cc63",
+  "upstream_requirements_sha256": "7d7772b3f932b210af01729700b6a9188084ecde53d78f79e95ad7befee60fd9",
+  "research_requirements_sha256": "450a676ce9c860c2a85dd55c7d9f3fa7e08123a8cc6620fed9dab59831f5afa8",
+  "torch_wheel_sha256": "584e5ee99d29286b93be2fba3b3f1f5b9d7a4b9055a288eb31b33100a1f09ed9",
+  "torch_wheel_hash_checked_against": "https://download.pytorch.org/whl/cu118/torch/",
+  "checks": {
+    "package_isolation_imports_ridge_cuda_attention": "passed",
+    "pip_check": "passed",
+    "okx_entrypoint_help": "passed",
+    "official_cpu_regression": {
+      "passed": 4,
+      "failed": 0,
+      "seconds": 27.45,
+      "offline": true
+    },
+    "cuda_model_smoke": {
+      "status": "passed",
+      "device": "cuda",
+      "model_revision": "901c26c1332695a2a8f243eb2f37243a37bea320",
+      "tokenizer_revision": "0e0117387f39004a9016484a186a908917e22426",
+      "history_bars": 64,
+      "representation_shape": [
+        1,
+        512
+      ],
+      "prediction_shape": [
+        4,
+        6
+      ],
+      "peak_cuda_memory_mb": 121.06,
+      "offline": true
+    }
+  }
+}

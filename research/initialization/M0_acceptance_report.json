@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "accepted_at_utc": "2026-10-08T02:36:23.046481+00:00",
+  "status": "accepted_ready_to_encode",
+  "ready_to_encode": true,
+  "scope": "Research initialization and engineering prerequisites; stop before frozen representation extraction",
+  "config_evaluated_sha256": "1b4126205c051756f41f109897e9d4632a106cf0285dc78bb270e7da3e372676",
+  "evidence": {
+    "research/environment/verification.json": {
+      "sha256": "ebecc9d468fea8f88518bcb8249ea056491d0d811902e884481dd75cb18ce355"
+    },
+    "research/freqtrade/environment/verification.json": {
+      "sha256": "07e61243131c9ac7d41780f6734feede29e2993249a71adff36408309cbf5ef4"
+    },
+    "research/initialization/data_integrity_audit.json": {
+      "sha256": "4ce2447778b7460ab00b7c110556b413ac60b5b07368ded847c80c8ee88d23de"
+    },
+    "research/initialization/data_remote_recheck.json": {
+      "sha256": "eb8d45c50b2ed2c1f46ecbaeed235161cbaf927eecb4ce69cfd2f08539c44cc1"
+    },
+    "research/initialization/reference_labels_report.json": {
+      "sha256": "25e146c70a975ea83a649e00a05598211063361abeb34afc11a80bc16ff01130"
+    },
+    "research/initialization/freqtrade_import_manifest.json": {
+      "sha256": "a7a0ec2bf2134b2efb3c332bf0e2767d4ac771be786c64a3804082bbe4b8f6fb"
+    },
+    "research/initialization/e00_report.json": {
+      "sha256": "0b3d9c9b34c0c78b91217b77136d52bd6db8db54bea298f4e38f95db424ca419"
+    },
+    "research/initialization/e00_causality_report.json": {
+      "sha256": "ec6958ee9d66122bebbe0105d57dfbf173a9b772ab7bb5df18768eacb452506e"
+    },
+    "research/registry/E00_20261008_phase4_v1.json": {
+      "sha256": "da89c113044a141131c98208e0d24b38b5a41b04c98cfad67ce1ef18a623be40"
+    },
+    "research/registry/E00_20261008_phase4_causality.json": {
+      "sha256": "05090a913ea6daefe4704ec9f2bd43d27c05776938e5b0294d28d641d4a5f5ac"
+    },
+    "research/initialization/version_manifest.json": {
+      "sha256": "53b8c60d42801c149c1b03190c141f61026239692350f7accc03dd470904f4f3"
+    }
+  },
+  "pinned_weights": {
+    "model": {
+      "revision": "901c26c1332695a2a8f243eb2f37243a37bea320",
+      "files_sha256_verified": 2
+    },
+    "tokenizer": {
+      "revision": "0e0117387f39004a9016484a186a908917e22426",
+      "files_sha256_verified": 2
+    }
+  },
+  "checks": {
+    "isolated_environments_and_locks": "passed",
+    "upstream_core_unchanged": "passed",
+    "audited_official_data_and_units": "passed",
+    "real_amount_and_native_import": "passed",
+    "signed_funding": "passed",
+    "causal_timing_and_purged_labels": "passed",
+    "locked_splits_and_costs": "passed",
+    "registered_E00_all_48_verified": "passed",
+    "ordinary_train_only_and_validation_selection_review": "passed",
+    "official_scoped_causality_tools": "passed",
+    "pinned_weights_and_representation_contract": "passed",
+    "holdout_sealed_and_extraction_disabled": "passed"
+  },
+  "economic_screen_passed": true,
+  "information_value_over_cash_established": false,
+  "final_holdout_evaluated": false,
+  "frozen_representation_extraction_run": false,
+  "limitations": [
+    "Published official data fidelity does not prove exchange internal ledger, historical precision or availability.",
+    "Checkpoint training cutoff unproven; early folds retrospective.",
+    "Official drawdown is closed-trade equity, not intrahour mark-to-market.",
+    "Sparse E00 gate improves losing momentum but does not establish profitable information value over cash.",
+    "Official causality tools cover stated development modes; sidecar producer has separate causal tests and train-only artifact review."
+  ],
+  "next_stage": "Discuss E01/E02 frozen representation protocol; do not extract in this task"
+}

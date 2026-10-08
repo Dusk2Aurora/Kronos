@@ -1,0 +1,499 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "audited_at": "2026-10-08T01:36:13.837294+00:00",
+  "snapshot_id": "20261008T011408835523Z_7bb06df6f064",
+  "snapshot": "D:\\file\\Kronos-master\\research\\data\\snapshots\\20261008T011408835523Z_7bb06df6f064",
+  "snapshot_manifest_sha256": "bc95c980c0af73f1f304f2479bc4e8b2f697fa8902b135b976069a0c4b951448",
+  "method": "independent_local_raw_reconstruction_no_network_or_snapshot_mutation",
+  "ranges": {
+    "data_start": "2023-12-21T08:00:00Z",
+    "evaluation_start": "2024-01-01T00:00:00Z",
+    "evaluation_end_exclusive": "2026-10-01T00:00:00Z",
+    "warmup_bars": 256
+  },
+  "files": {
+    "manifest_exact_file_set": true,
+    "hashed_files": 528,
+    "raw_sources": 524,
+    "all_manifest_hashes_passed": true,
+    "raw_source_set_exact": true,
+    "source_hashes_passed": true
+  },
+  "raw_pages": {
+    "instruments": 1,
+    "history-candles": 244,
+    "history-mark-price-candles": 241,
+    "market-data-history": 4,
+    "BTC-USDT-SWAP-fundingrates-2024-01.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2024-02.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2024-03.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2024-04.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2024-05.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2024-06.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2024-07.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2024-08.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2024-09.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2024-10.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2024-11.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2024-12.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2025-01.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2025-02.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2025-03.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2025-04.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2025-05.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2025-06.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2025-07.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2025-08.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2025-09.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2025-10.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2025-11.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2025-12.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2026-01.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2026-02.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2026-03.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2026-04.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2026-05.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2026-06.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2026-07.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2026-08.zip": 1,
+    "BTC-USDT-SWAP-fundingrates-2026-09.zip": 1,
+    "funding-rate-history": 1
+  },
+  "duplicates": {},
+  "candles": {
+    "candles": {
+      "rows": 24352,
+      "expected_rows": 24352,
+      "hourly_grid_exact": true,
+      "raw_all_numeric_fields_exact": true,
+      "raw_confirmed_only": true,
+      "first": "2023-12-21T08:00:00Z",
+      "last": "2026-09-30T23:00:00Z"
+    },
+    "mark_prices": {
+      "rows": 24096,
+      "expected_rows": 24096,
+      "hourly_grid_exact": true,
+      "raw_all_numeric_fields_exact": true,
+      "raw_confirmed_only": true,
+      "first": "2024-01-01T00:00:00Z",
+      "last": "2026-09-30T23:00:00Z"
+    }
+  },
+  "monthly_archives": [
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2024-01.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202401/BTC-USDT-SWAP-fundingrates-2024-01.zip?v=1000",
+      "raw_path": "raw/00490.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2023-12-31T16:00:00Z",
+      "last": "2024-01-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2024-02.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202402/BTC-USDT-SWAP-fundingrates-2024-02.zip?v=1000",
+      "raw_path": "raw/00491.zip",
+      "rows": 87,
+      "expected_rows": 87,
+      "first": "2024-01-31T16:00:00Z",
+      "last": "2024-02-29T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2024-03.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202403/BTC-USDT-SWAP-fundingrates-2024-03.zip?v=1000",
+      "raw_path": "raw/00492.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2024-02-29T16:00:00Z",
+      "last": "2024-03-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2024-04.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202404/BTC-USDT-SWAP-fundingrates-2024-04.zip?v=1000",
+      "raw_path": "raw/00493.zip",
+      "rows": 90,
+      "expected_rows": 90,
+      "first": "2024-03-31T16:00:00Z",
+      "last": "2024-04-30T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2024-05.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202405/BTC-USDT-SWAP-fundingrates-2024-05.zip?v=1000",
+      "raw_path": "raw/00494.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2024-04-30T16:00:00Z",
+      "last": "2024-05-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2024-06.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202406/BTC-USDT-SWAP-fundingrates-2024-06.zip?v=1000",
+      "raw_path": "raw/00495.zip",
+      "rows": 90,
+      "expected_rows": 90,
+      "first": "2024-05-31T16:00:00Z",
+      "last": "2024-06-30T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2024-07.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202407/BTC-USDT-SWAP-fundingrates-2024-07.zip?v=1000",
+      "raw_path": "raw/00496.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2024-06-30T16:00:00Z",
+      "last": "2024-07-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2024-08.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202408/BTC-USDT-SWAP-fundingrates-2024-08.zip?v=1000",
+      "raw_path": "raw/00497.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2024-07-31T16:00:00Z",
+      "last": "2024-08-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2024-09.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202409/BTC-USDT-SWAP-fundingrates-2024-09.zip?v=1000",
+      "raw_path": "raw/00498.zip",
+      "rows": 90,
+      "expected_rows": 90,
+      "first": "2024-08-31T16:00:00Z",
+      "last": "2024-09-30T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2024-10.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202410/BTC-USDT-SWAP-fundingrates-2024-10.zip?v=1000",
+      "raw_path": "raw/00499.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2024-09-30T16:00:00Z",
+      "last": "2024-10-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2024-11.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202411/BTC-USDT-SWAP-fundingrates-2024-11.zip?v=1000",
+      "raw_path": "raw/00500.zip",
+      "rows": 90,
+      "expected_rows": 90,
+      "first": "2024-10-31T16:00:00Z",
+      "last": "2024-11-30T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2024-12.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202412/BTC-USDT-SWAP-fundingrates-2024-12.zip?v=1000",
+      "raw_path": "raw/00501.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2024-11-30T16:00:00Z",
+      "last": "2024-12-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2025-01.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202501/BTC-USDT-SWAP-fundingrates-2025-01.zip?v=1000",
+      "raw_path": "raw/00502.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2024-12-31T16:00:00Z",
+      "last": "2025-01-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2025-02.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202502/BTC-USDT-SWAP-fundingrates-2025-02.zip?v=1000",
+      "raw_path": "raw/00503.zip",
+      "rows": 84,
+      "expected_rows": 84,
+      "first": "2025-01-31T16:00:00Z",
+      "last": "2025-02-28T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2025-03.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202503/BTC-USDT-SWAP-fundingrates-2025-03.zip?v=1000",
+      "raw_path": "raw/00504.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2025-02-28T16:00:00Z",
+      "last": "2025-03-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2025-04.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202504/BTC-USDT-SWAP-fundingrates-2025-04.zip?v=1000",
+      "raw_path": "raw/00505.zip",
+      "rows": 90,
+      "expected_rows": 90,
+      "first": "2025-03-31T16:00:00Z",
+      "last": "2025-04-30T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2025-05.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202505/BTC-USDT-SWAP-fundingrates-2025-05.zip?v=1000",
+      "raw_path": "raw/00506.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2025-04-30T16:00:00Z",
+      "last": "2025-05-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2025-06.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202506/BTC-USDT-SWAP-fundingrates-2025-06.zip?v=1000",
+      "raw_path": "raw/00507.zip",
+      "rows": 90,
+      "expected_rows": 90,
+      "first": "2025-05-31T16:00:00Z",
+      "last": "2025-06-30T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2025-07.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202507/BTC-USDT-SWAP-fundingrates-2025-07.zip?v=1000",
+      "raw_path": "raw/00508.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2025-06-30T16:00:00Z",
+      "last": "2025-07-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2025-08.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202508/BTC-USDT-SWAP-fundingrates-2025-08.zip?v=1000",
+      "raw_path": "raw/00509.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2025-07-31T16:00:00Z",
+      "last": "2025-08-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2025-09.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202509/BTC-USDT-SWAP-fundingrates-2025-09.zip?v=1000",
+      "raw_path": "raw/00510.zip",
+      "rows": 90,
+      "expected_rows": 90,
+      "first": "2025-08-31T16:00:00Z",
+      "last": "2025-09-30T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2025-10.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202510/BTC-USDT-SWAP-fundingrates-2025-10.zip?v=1000",
+      "raw_path": "raw/00511.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2025-09-30T16:00:00Z",
+      "last": "2025-10-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2025-11.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202511/BTC-USDT-SWAP-fundingrates-2025-11.zip?v=1000",
+      "raw_path": "raw/00512.zip",
+      "rows": 90,
+      "expected_rows": 90,
+      "first": "2025-10-31T16:00:00Z",
+      "last": "2025-11-30T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2025-12.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202512/BTC-USDT-SWAP-fundingrates-2025-12.zip?v=1000",
+      "raw_path": "raw/00513.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2025-11-30T16:00:00Z",
+      "last": "2025-12-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2026-01.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202601/BTC-USDT-SWAP-fundingrates-2026-01.zip?v=1000",
+      "raw_path": "raw/00514.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2025-12-31T16:00:00Z",
+      "last": "2026-01-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2026-02.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202602/BTC-USDT-SWAP-fundingrates-2026-02.zip?v=1000",
+      "raw_path": "raw/00515.zip",
+      "rows": 84,
+      "expected_rows": 84,
+      "first": "2026-01-31T16:00:00Z",
+      "last": "2026-02-28T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2026-03.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202603/BTC-USDT-SWAP-fundingrates-2026-03.zip?v=1000",
+      "raw_path": "raw/00516.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2026-02-28T16:00:00Z",
+      "last": "2026-03-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2026-04.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202604/BTC-USDT-SWAP-fundingrates-2026-04.zip?v=1000",
+      "raw_path": "raw/00517.zip",
+      "rows": 90,
+      "expected_rows": 90,
+      "first": "2026-03-31T16:00:00Z",
+      "last": "2026-04-30T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2026-05.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202605/BTC-USDT-SWAP-fundingrates-2026-05.zip?v=1000",
+      "raw_path": "raw/00518.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2026-04-30T16:00:00Z",
+      "last": "2026-05-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2026-06.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202606/BTC-USDT-SWAP-fundingrates-2026-06.zip?v=1000",
+      "raw_path": "raw/00519.zip",
+      "rows": 90,
+      "expected_rows": 90,
+      "first": "2026-05-31T16:00:00Z",
+      "last": "2026-06-30T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2026-07.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202607/BTC-USDT-SWAP-fundingrates-2026-07.zip?v=1000",
+      "raw_path": "raw/00520.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2026-06-30T16:00:00Z",
+      "last": "2026-07-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2026-08.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202608/BTC-USDT-SWAP-fundingrates-2026-08.zip?v=1000",
+      "raw_path": "raw/00521.zip",
+      "rows": 93,
+      "expected_rows": 93,
+      "first": "2026-07-31T16:00:00Z",
+      "last": "2026-08-31T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    },
+    {
+      "filename": "BTC-USDT-SWAP-fundingrates-2026-09.zip",
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202609/BTC-USDT-SWAP-fundingrates-2026-09.zip?v=1000",
+      "raw_path": "raw/00522.zip",
+      "rows": 90,
+      "expected_rows": 90,
+      "first": "2026-08-31T16:00:00Z",
+      "last": "2026-09-30T08:00:00Z",
+      "utc_plus_8_month_grid_exact": true
+    }
+  ],
+  "funding": {
+    "rows": 3012,
+    "observed_8h_grid_exact": true,
+    "first": "2024-01-01T00:00:00Z",
+    "last": "2026-09-30T16:00:00Z",
+    "archive_events_in_evaluation": 3011,
+    "REST_events_in_evaluation": 281,
+    "source_kind_counts": {
+      "archive_realized": 2731,
+      "archive_and_REST_realized": 280,
+      "REST_realizedRate": 1
+    },
+    "REST_only_events": [
+      {
+        "instrument": "BTC-USDT-SWAP",
+        "funding_at": "2026-09-30T16:00:00Z",
+        "realized_rate": "3.67519063153e-05",
+        "source_kind": "REST_realizedRate"
+      }
+    ],
+    "archive_REST_overlap_events": 280,
+    "overlap_max_absolute_difference": 0.0,
+    "normalized_rates_match_raw": true,
+    "nonzero_events": 3012,
+    "negative_events": 598,
+    "original_mark_exact_timestamp_join_events": 3012
+  },
+  "external_provenance": {
+    "config": {
+      "collected_sha256": "e5ac6c4607e8fa5fbb634d4bbce68f078f5deb893bde3ee6dd723c4baac76a4a",
+      "current_file_exists": true,
+      "current_hash_matches_collection": false
+    },
+    "script": {
+      "collected_sha256": "d3c2d87782396b8e1e580f9441d3dc60a03231aeb859668994f2b07ae66f798e",
+      "current_file_exists": true,
+      "current_hash_matches_collection": true
+    },
+    "data_contract": {
+      "collected_sha256": "afb39aecd80a5a79fe2367c88b4f83eff931b21320c2d234531136b4ce7d3b21",
+      "current_file_exists": true,
+      "current_hash_matches_collection": true
+    },
+    "version_manifest": {
+      "collected_sha256": "609835abe34718741d69abe3810981cd7c8aa12362ce406db1e6c6e9eb4650f4",
+      "current_file_exists": true,
+      "current_hash_matches_collection": false
+    }
+  },
+  "conclusions": {
+    "official_source_complete": true,
+    "published_official_source_coverage_verified": true,
+    "official_source_complete_scope": "Preserved official monthly files and realized REST events exactly reconstruct this range; complete conditional on observed 8h schedule.",
+    "structural_data_ready": true,
+    "historical_actual_exchange_settlement_schedule_independently_proven": false,
+    "point_in_time_availability_proven": false,
+    "historical_order_execution_or_tick_exact_mark_proven": false,
+    "research_protocol_or_formal_evaluation_approval": false
+  },
+  "limitations": [
+    "Local hashes establish internal integrity, not independent authenticity of every historical exchange record.",
+    "Observed complete 8h grid cannot independently rule out an exchange omission or an undocumented extra settlement.",
+    "Collection is retrospective; available_at is a configured assumption, not measured historical availability.",
+    "Hourly mark open is a settlement proxy; no tick-exact debit or historical order fill precision is established.",
+    "Config/version manifest collection hashes are preserved, but original full files were not copied into the snapshot."
+  ],
+  "code_review_observations": [
+    {
+      "file": "research/scripts/collect_okx_snapshot.py",
+      "line": 252,
+      "observation": "Collector rejects funding gaps greater than 8h; the independent audit additionally checks exact observed UTC8h phase/grid and each UTC+8 monthly archive grid."
+    },
+    {
+      "file": "research/freqtrade/import_snapshot.py",
+      "line": 130,
+      "observation": "Importer verifies listed hashes and required normalized files; the independent audit additionally checks exact manifest/raw source sets and reconstructs all normalized raw numeric fields."
+    },
+    {
+      "file": "research/freqtrade/import_snapshot.py",
+      "line": 89,
+      "observation": "Importer requires unique ordered hourly funding and original mark joins; observed schedule completeness is independently checked by this audit."
+    }
+  ]
+}

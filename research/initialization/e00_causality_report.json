@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "status": "accepted_scoped",
+  "run_directory": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality",
+  "registry": "D:\\file\\Kronos-master\\research\\registry\\E00_20261008_phase4_causality.json",
+  "results": [
+    {
+      "fold": "WF01",
+      "mode": "fixed_momentum",
+      "tool": "lookahead-analysis",
+      "returncode": 0,
+      "timerange": "20250401-20250630T2300",
+      "official_csv_rows": [
+        {
+          "filename": "KronosE00.py",
+          "strategy": "KronosE00",
+          "has_bias": "False",
+          "total_signals": "12",
+          "biased_entry_signals": "0",
+          "biased_exit_signals": "0",
+          "biased_indicators": ""
+        }
+      ],
+      "baseline_native_trades": 272,
+      "baseline_exit_reasons": [
+        "fixed_hold_4h"
+      ],
+      "baseline_directions": [
+        false,
+        true
+      ],
+      "all_baseline_exits_custom_4h": true,
+      "accepted": true,
+      "evidence_sha256": {
+        "WF01\\lookahead-analysis\\lookahead.csv": "e876beaf28116c6e25e4167b8b394b331d898e71fa9c046b18f7ece9a6d407a2",
+        "WF01\\lookahead-analysis\\native_trades_000.json": "51cf63ca9b1ada975800abc3b2e3c4430c501aa17cf61f247087032af3f83fc1",
+        "WF01\\lookahead-analysis\\native_trades_001.json": "24c1bfc1e03aad11d4d64d7ecef9a1494e1a6e49aa8ceb2edd40b486bfc056f8",
+        "WF01\\lookahead-analysis\\native_trades_002.json": "14f8059a37bf6b425ed3b0700ba29f960b434b20d8819664d6dd0bb6f100d984",
+        "WF01\\lookahead-analysis\\native_trades_003.json": "9c248a376d3575f2899f5869a79999c7d9e0688a13dbf9de607e123a5f586300",
+        "WF01\\lookahead-analysis\\native_trades_004.json": "18ad571d733784736989a9d25cd4802755416819da21b91b07b0e9af48a582f0",
+        "WF01\\lookahead-analysis\\native_trades_005.json": "360388a8f2861bdf9bc9b70bfacee65eb16bf6df0705c7ecb27f024ea2cb92b7",
+        "WF01\\lookahead-analysis\\native_trades_006.json": "3604426a6aee3a209cd2a1f86d68244001ff1bb8306399be0bd51ffcc9922c47",
+        "WF01\\lookahead-analysis\\native_trades_007.json": "2e6c3187e651066087fc414c905927cb373ab6c4e2b108fdc0745698c4d2a831",
+        "WF01\\lookahead-analysis\\native_trades_008.json": "f89bb7ecbeafbbbb5deb85a2f8fda38bffc93d6ceab25044aa02bddb1335d2f7",
+        "WF01\\lookahead-analysis\\native_trades_009.json": "3d807a352024a90474ee00693757e491a916a05d6fe3f3d1d3c58cf8b62dca6c",
+        "WF01\\lookahead-analysis\\native_trades_010.json": "2f29ba7428865fd802437bc091bbef633e87f27799d7cc8eac6ccb1749aa5f56",
+        "WF01\\lookahead-analysis\\native_trades_011.json": "cb4b591fea2abc24e9697f6b74b6998effbd23b12bb755e3f8c6c3deedbc9dd4",
+        "WF01\\lookahead-analysis\\native_trades_012.json": "a4c972121f2087e84bd559ad067614d374db084102bd16bf718d7a5758f386c7",
+        "WF01\\lookahead-analysis\\native_trades_013.json": "3a919ca76e1c68e26b836893b0db5ff548f478499d253e34a7e4aa1191b59dac",
+        "WF01\\lookahead-analysis\\native_trades_014.json": "3d73da849008fe649e063ccaaefe72a40469d59bb28d6b1254fb3be555ca4607",
+        "WF01\\lookahead-analysis\\native_trades_015.json": "13fe8c5829b61754b8909c60e9f128f9e0d7b6249a7160ed693a20cc32aff507",
+        "WF01\\lookahead-analysis\\native_trades_016.json": "f7a5320a7bbabf8667b262e60425ea7d6e799df8df88b3c7ca74876be2aa7fc4",
+        "WF01\\lookahead-analysis\\native_trades_017.json": "04044e5e81560b90791f91bf722cd8a3f635ddf019bfae4ca5c974c1fe9a8e1b",
+        "WF01\\lookahead-analysis\\native_trades_018.json": "08763573706e58d3e48a577dfff88552fbb141d70bf458a7e46b47c462014af4",
+        "WF01\\lookahead-analysis\\native_trades_019.json": "93233597cd9563cc56eb9d02a9a252024ba30cc59451fdb633a262eacfda7402",
+        "WF01\\lookahead-analysis\\native_trades_020.json": "c1087ae218fa0ff89734fc66ae25d2e07560c88f50990b6f2a63002c170ea239",
+        "WF01\\lookahead-analysis\\native_trades_021.json": "446a29212c1fbe3d40ba4529efab590926fde182e86a8e9a82c64fd1cb8235e4",
+        "WF01\\lookahead-analysis\\native_trades_022.json": "f0cf22562139f755fd8a233b41a0cf11f36511e565e5c3f9781ff34688d357e6",
+        "WF01\\lookahead-analysis\\native_trades_023.json": "c991926384b2bdf5e5329226d02662c72a2efe7bf896dee33325bf7307ce6f8d",
+        "WF01\\lookahead-analysis\\native_trades_024.json": "da4e112275c31faf0171142451c86a919304cc4ad6fadf98dbfb6b1e396dfcee",
+        "WF01\\lookahead-analysis\\tool.log": "39610c87e23a2a04592d0390bc8cb57fd703db6fdce01391f6a2cf28916a4144"
+      }
+    },
+    {
+      "fold": "WF01",
+      "mode": "fixed_momentum",
+      "tool": "recursive-analysis",
+      "returncode": 0,
+      "timerange": "20250401-20250630T2300",
+      "native_no_recursive_variance_message": true,
+      "native_no_indicator_lookahead_message": true,
+      "tail_rows_exact_match": true,
+      "accepted": true,
+      "evidence_sha256": {
+        "WF01\\recursive-analysis\\native_recursive_tail_rows.json": "b07aeadedcab9b9e350655c4e4af8d2b9a277d5346ce634a01c3a8c56a63611f",
+        "WF01\\recursive-analysis\\tool.log": "4f8279a1c11a12c0333c74d3b00aa165a9f7290147f3da1e541cd0af53234563"
+      }
+    },
+    {
+      "fold": "WF03",
+      "mode": "ordinary_features_gate",
+      "tool": "lookahead-analysis",
+      "returncode": 0,
+      "timerange": "20251001-20251231T2300",
+      "official_csv_rows": [
+        {
+          "filename": "KronosE00.py",
+          "strategy": "KronosE00",
+          "has_bias": "False",
+          "total_signals": "3",
+          "biased_entry_signals": "0",
+          "biased_exit_signals": "0",
+          "biased_indicators": ""
+        }
+      ],
+      "baseline_native_trades": 3,
+      "baseline_exit_reasons": [
+        "fixed_hold_4h"
+      ],
+      "baseline_directions": [
+        false,
+        true
+      ],
+      "all_baseline_exits_custom_4h": true,
+      "accepted": true,
+      "evidence_sha256": {
+        "WF03\\lookahead-analysis\\lookahead.csv": "6b0c3aec1ec4dac4c9eaf36b971d9cba8884efe2db94d80b754b91d2395c75b3",
+        "WF03\\lookahead-analysis\\native_trades_000.json": "5b3ceb73cdeaca232cbc707bb9cd39053fc84416f874c8c2ddcc2afa6df44a5b",
+        "WF03\\lookahead-analysis\\native_trades_001.json": "ee91339a8e69e184b9ffc0973913e53177c53d46abbba74f47fb95b63bbebcf9",
+        "WF03\\lookahead-analysis\\native_trades_002.json": "1e67c5946fc9ca2f319cfc6d41f8bc5ac49852b92d0851b3cfcfbef82293824f",
+        "WF03\\lookahead-analysis\\native_trades_003.json": "3c24698b0ed5fb50cc8b840491c7fc1ff0cc93a039bcb5f707c84da9cdd05a48",
+        "WF03\\lookahead-analysis\\native_trades_004.json": "9ab72c83aa78dfab2e0dfef6ed8b519f5d80aa9f09461fc4855866e29b19da0a",
+        "WF03\\lookahead-analysis\\native_trades_005.json": "687715299353a54c162e161d1cc5106bd44c3c1aa2f7ae441a059257cc633109",
+        "WF03\\lookahead-analysis\\native_trades_006.json": "5b3ceb73cdeaca232cbc707bb9cd39053fc84416f874c8c2ddcc2afa6df44a5b",
+        "WF03\\lookahead-analysis\\tool.log": "3f3293c7535402b2626b6d6b84c5ae25daba0a9c6119452fec2eb45cec4e30a8"
+      }
+    },
+    {
+      "fold": "WF03",
+      "mode": "ordinary_features_gate",
+      "tool": "recursive-analysis",
+      "returncode": 0,
+      "timerange": "20251001-20251231T2300",
+      "native_no_recursive_variance_message": true,
+      "native_no_indicator_lookahead_message": true,
+      "tail_rows_exact_match": true,
+      "accepted": true,
+      "evidence_sha256": {
+        "WF03\\recursive-analysis\\native_recursive_tail_rows.json": "0173b7af62ca522b667522558ce1e64f5f33d24815fe082fb6a035a2a5e60716",
+        "WF03\\recursive-analysis\\tool.log": "8d125f758d88df31080f41cc791b4a6be20f7c06725acd3261c43166bcdd017a"
+      }
+    }
+  ],
+  "scope": "Official adapter causality checks on WF01 and WF03 development periods only",
+  "limitations": [
+    "Precomputed sidecar truncation cannot certify the producer training/features.",
+    "Official lookahead overrides stake, wallet, order type and max_open_trades.",
+    "Recursive tool checks indicators only and only the last row per startup size."
+  ],
+  "final_holdout_read_or_evaluated": false,
+  "ready_to_encode_changed": false
+}

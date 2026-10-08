@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "id": "E00_20261008_phase4_causality",
+  "status": "accepted_scoped",
+  "created_at": "2026-10-08T02:32:45.388775+00:00",
+  "hypothesis": "Historical adapter signals and fixed exits are stable under official truncation and startup tests",
+  "selection_scope": "WF01 fixed_momentum and WF03 ordinary_features_gate only; no model/threshold selection",
+  "final_holdout_read_or_evaluated": false,
+  "engine_commit": "1f394eaebc2f46a83d26971388628707802f8602",
+  "sources": [
+    {
+      "path": "D:\\file\\Kronos-master\\research\\freqtrade\\check_e00_causality.py",
+      "sha256": "d270edb63629ae962a91628095bdcda779287b68736abf27670fc9bcde4e5b3d",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\00_check_e00_causality.py"
+    },
+    {
+      "path": "D:\\file\\Kronos-master\\research\\configs\\initial_experiment.yaml",
+      "sha256": "ebf07594ca03ece70668176cff56d27da72850b4838779005e986e89ccc88629",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\01_initial_experiment.yaml"
+    },
+    {
+      "path": "D:\\file\\Kronos-master\\research\\freqtrade\\strategies\\KronosE00.py",
+      "sha256": "2774fe5be4ce7dd276633dd149664f78c77ed822f01e4960e0bc9b99a1fd83c0",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\02_KronosE00.py"
+    },
+    {
+      "path": "D:\\file\\Kronos-master\\research\\baselines\\ordinary_features.py",
+      "sha256": "de067a7bb6a7b5c961b27d1efcb50fc7668ad0e330ac1544ebf5183aea8886be",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\03_ordinary_features.py"
+    },
+    {
+      "path": "D:\\file\\Kronos-master\\research\\baselines\\prepare_e00.py",
+      "sha256": "e279ff099fa5c7110f65648fc135801180f25931f54732dc060b46f0a7b22d9e",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\04_prepare_e00.py"
+    },
+    {
+      "path": "D:\\file\\Kronos-master\\research\\initialization\\freqtrade_import_manifest.json",
+      "sha256": "a7a0ec2bf2134b2efb3c332bf0e2767d4ac771be786c64a3804082bbe4b8f6fb",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\05_freqtrade_import_manifest.json"
+    },
+    {
+      "path": "D:\\file\\Kronos-master\\research\\registry\\E00_20261008_phase4_v1.json",
+      "sha256": "da89c113044a141131c98208e0d24b38b5a41b04c98cfad67ce1ef18a623be40",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\06_E00_20261008_phase4_v1.json"
+    },
+    {
+      "path": "D:\\file\\freqtrade\\user_data\\kronos_research\\strategies\\KronosE00.py",
+      "sha256": "2774fe5be4ce7dd276633dd149664f78c77ed822f01e4960e0bc9b99a1fd83c0",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\07_KronosE00.py"
+    },
+    {
+      "path": "D:\\file\\freqtrade\\freqtrade\\optimize\\analysis\\lookahead.py",
+      "sha256": "25b02b2d4f6e4317d8855b01976a3fef112e56280b7a33954634ed4dc51e2cca",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\08_lookahead.py"
+    },
+    {
+      "path": "D:\\file\\freqtrade\\freqtrade\\optimize\\analysis\\lookahead_helpers.py",
+      "sha256": "aa1c45539c5077c5160ab9346014ea5bf6f1e7b0114a38571f326d293e2296ae",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\09_lookahead_helpers.py"
+    },
+    {
+      "path": "D:\\file\\freqtrade\\freqtrade\\optimize\\analysis\\recursive.py",
+      "sha256": "108e1af0aa1e4bfeb259d3f70b0a2c567bf46c1a46fb6a19ef80179b1b616d92",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\10_recursive.py"
+    },
+    {
+      "path": "D:\\file\\freqtrade\\freqtrade\\optimize\\analysis\\recursive_helpers.py",
+      "sha256": "626d60ca2ae520e7c8066acd8e57866d9a547b8c7d210d77603adcb8418414a8",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\11_recursive_helpers.py"
+    },
+    {
+      "path": "D:\\file\\freqtrade\\freqtrade\\optimize\\analysis\\base_analysis.py",
+      "sha256": "71cb02bd4932c66ce02a2b1334e9554f0939f13f84daef9503c6433dd6002364",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\12_base_analysis.py"
+    },
+    {
+      "path": "D:\\file\\freqtrade\\freqtrade\\optimize\\backtesting.py",
+      "sha256": "1b185dfe44e5b0cbab0f2e35fae8c6f545c9aa987d556cd019bea1bd8880bfd1",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\13_backtesting.py"
+    },
+    {
+      "path": "D:\\file\\freqtrade\\freqtrade\\strategy\\interface.py",
+      "sha256": "5d0faa6da85bd223bcea2281bd173c7ffc54c3a9647ae136e4ebc7d5685dea02",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\14_interface.py"
+    },
+    {
+      "path": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_v1\\engine\\WF01\\fixed_momentum\\base\\config.json",
+      "sha256": "c29cb7bd707bd882925eba44e520307ab025b260d7ec17e8c13262ce6fb3edc1",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\15_config.json"
+    },
+    {
+      "path": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_v1\\decisions\\WF01_fixed_momentum.json",
+      "sha256": "6062720b302c6ace1f3869161b56512c3a44c125f12e1e13ef677e64173d58b5",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\16_WF01_fixed_momentum.json"
+    },
+    {
+      "path": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_v1\\engine\\WF03\\ordinary_features_gate\\base\\config.json",
+      "sha256": "a657e2134da6b5da7649a39157e967b8744bcfa846624cb0469d0a88ed185b1a",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\17_config.json"
+    },
+    {
+      "path": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_v1\\decisions\\WF03_ordinary_features_gate.json",
+      "sha256": "b1a7a7e1f48b57e9d18e242966314b9b3245647722cec5d421ba9139f335ea23",
+      "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\18_WF03_ordinary_features_gate.json"
+    }
+  ],
+  "native_file_sha256": {
+    "futures\\BTC_USDT_USDT-1h-funding_rate.feather": "a8ff400f61ac5cfe6a434691493de1f466e913c0809346d1847ae048c776cfba",
+    "futures\\BTC_USDT_USDT-1h-futures.feather": "b410c6ae5b1b1140cf5e04c215fccf7848c292eefda9e17a7ee9d961304e689b",
+    "futures\\BTC_USDT_USDT-1h-mark.feather": "ca3df43e77ce38f04ffbf741c33ad0b9575f65ec38c0f888de9e9910d6e5fc3d"
+  },
+  "attempts": [
+    {
+      "fold": "WF01",
+      "mode": "fixed_momentum",
+      "tool": "lookahead-analysis",
+      "timerange": "20250401-20250630T2300",
+      "targeted_trade_amount": 12,
+      "command": [
+        "D:\\file\\freqtrade\\.venv\\Scripts\\python.exe",
+        "D:\\file\\Kronos-master\\research\\freqtrade\\check_e00_causality.py",
+        "--worker",
+        "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\WF01\\lookahead-analysis",
+        "--",
+        "lookahead-analysis",
+        "--config",
+        "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_v1\\engine\\WF01\\fixed_momentum\\base\\config.json",
+        "--strategy",
+        "KronosE00",
+        "--strategy-path",
+        "D:\\file\\freqtrade\\user_data\\kronos_research\\strategies",
+        "--datadir",
+        "D:\\file\\freqtrade\\user_data\\kronos_research\\data\\20261008T011408835523Z_7bb06df6f064",
+        "--timerange",
+        "20250401-20250630T2300",
+        "--pairs",
+        "BTC/USDT:USDT",
+        "--no-color",
+        "--minimum-trade-amount",
+        "1",
+        "--targeted-trade-amount",
+        "12",
+        "--lookahead-analysis-exportfilename",
+        "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\WF01\\lookahead-analysis\\lookahead.csv",
+        "--backtest-directory",
+        "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\WF01\\lookahead-analysis",
+        "--export",
+        "none"
+      ],
+      "folder": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\WF01\\lookahead-analysis",
+      "status": "completed",
+      "returncode": 0
+    },
+    {
+      "fold": "WF01",
+      "mode": "fixed_momentum",
+      "tool": "recursive-analysis",
+      "timerange": "20250401-20250630T2300",
+      "targeted_trade_amount": null,
+      "command": [
+        "D:\\file\\freqtrade\\.venv\\Scripts\\python.exe",
+        "D:\\file\\Kronos-master\\research\\freqtrade\\check_e00_causality.py",
+        "--worker",
+        "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\WF01\\recursive-analysis",
+        "--",
+        "recursive-analysis",
+        "--config",
+        "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_v1\\engine\\WF01\\fixed_momentum\\base\\config.json",
+        "--strategy",
+        "KronosE00",
+        "--strategy-path",
+        "D:\\file\\freqtrade\\user_data\\kronos_research\\strategies",
+        "--datadir",
+        "D:\\file\\freqtrade\\user_data\\kronos_research\\data\\20261008T011408835523Z_7bb06df6f064",
+        "--timerange",
+        "20250401-20250630T2300",
+        "--pairs",
+        "BTC/USDT:USDT",
+        "--no-color",
+        "--startup-candle",
+        "256",
+        "512",
+        "1024"
+      ],
+      "folder": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\WF01\\recursive-analysis",
+      "status": "completed",
+      "returncode": 0
+    },
+    {
+      "fold": "WF03",
+      "mode": "ordinary_features_gate",
+      "tool": "lookahead-analysis",
+      "timerange": "20251001-20251231T2300",
+      "targeted_trade_amount": 3,
+      "command": [
+        "D:\\file\\freqtrade\\.venv\\Scripts\\python.exe",
+        "D:\\file\\Kronos-master\\research\\freqtrade\\check_e00_causality.py",
+        "--worker",
+        "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\WF03\\lookahead-analysis",
+        "--",
+        "lookahead-analysis",
+        "--config",
+        "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_v1\\engine\\WF03\\ordinary_features_gate\\base\\config.json",
+        "--strategy",
+        "KronosE00",
+        "--strategy-path",
+        "D:\\file\\freqtrade\\user_data\\kronos_research\\strategies",
+        "--datadir",
+        "D:\\file\\freqtrade\\user_data\\kronos_research\\data\\20261008T011408835523Z_7bb06df6f064",
+        "--timerange",
+        "20251001-20251231T2300",
+        "--pairs",
+        "BTC/USDT:USDT",
+        "--no-color",
+        "--minimum-trade-amount",
+        "1",
+        "--targeted-trade-amount",
+        "3",
+        "--lookahead-analysis-exportfilename",
+        "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\WF03\\lookahead-analysis\\lookahead.csv",
+        "--backtest-directory",
+        "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\WF03\\lookahead-analysis",
+        "--export",
+        "none"
+      ],
+      "folder": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\WF03\\lookahead-analysis",
+      "status": "completed",
+      "returncode": 0
+    },
+    {
+      "fold": "WF03",
+      "mode": "ordinary_features_gate",
+      "tool": "recursive-analysis",
+      "timerange": "20251001-20251231T2300",
+      "targeted_trade_amount": null,
+      "command": [
+        "D:\\file\\freqtrade\\.venv\\Scripts\\python.exe",
+        "D:\\file\\Kronos-master\\research\\freqtrade\\check_e00_causality.py",
+        "--worker",
+        "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\WF03\\recursive-analysis",
+        "--",
+        "recursive-analysis",
+        "--config",
+        "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_v1\\engine\\WF03\\ordinary_features_gate\\base\\config.json",
+        "--strategy",
+        "KronosE00",
+        "--strategy-path",
+        "D:\\file\\freqtrade\\user_data\\kronos_research\\strategies",
+        "--datadir",
+        "D:\\file\\freqtrade\\user_data\\kronos_research\\data\\20261008T011408835523Z_7bb06df6f064",
+        "--timerange",
+        "20251001-20251231T2300",
+        "--pairs",
+        "BTC/USDT:USDT",
+        "--no-color",
+        "--startup-candle",
+        "256",
+        "512",
+        "1024"
+      ],
+      "folder": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\WF03\\recursive-analysis",
+      "status": "completed",
+      "returncode": 0
+    }
+  ],
+  "limitations": [
+    "Precomputed sidecar truncation cannot certify the producer training/features.",
+    "Official lookahead overrides stake, wallet, order type and max_open_trades.",
+    "Recursive tool checks indicators only and only the last row per startup size."
+  ],
+  "report": "D:\\file\\Kronos-master\\research\\initialization\\e00_causality_report.json",
+  "report_sha256": "ec6958ee9d66122bebbe0105d57dfbf173a9b772ab7bb5df18768eacb452506e",
+  "post_execution_reproducibility_source": {
+    "path": "D:\\file\\Kronos-master\\research\\freqtrade\\check_e00_causality.py",
+    "sha256": "fb483956fa26f3ce0ca68cf834f834f9da53797d4d589ba64a4b9b746f0b6f30",
+    "copy": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_causality\\provenance\\check_e00_causality_final.py",
+    "change": "Preserve existing canonical report when repeating in a new output directory; no analysis computation or inputs changed."
+  }
+}

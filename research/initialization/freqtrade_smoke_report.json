@@ -1,0 +1,34 @@
+{
+  "status": "engineering_smoke_passed_not_formal_experiment",
+  "timerange": "20240101-20240108T0200",
+  "result_archive": "D:\\file\\freqtrade\\user_data\\kronos_research\\smoke_results\\funding_phase\\backtest-result-2026-10-08_01-40-46.zip",
+  "result_sha256": "4f5908f4619f87a776b27382cc69842de2af51255bd5ef016e2a540bdd77a610",
+  "trades": 21,
+  "strict_4h_exits": true,
+  "entry_hours_UTC": [
+    5,
+    13,
+    21
+  ],
+  "exit_hours_UTC": [
+    9,
+    17,
+    1
+  ],
+  "decision_hours_UTC": [
+    4,
+    12,
+    20
+  ],
+  "fees_per_side": 0.0007,
+  "entry_exit_prices_match_native_bar_opens": true,
+  "funding_events_per_trade": 1,
+  "funding_receipt_trades": 8,
+  "funding_payment_trades": 13,
+  "funding_formula_max_abs_error_USDT": 0,
+  "funding_base_quantity_unit": "BTC",
+  "decision_phase_review_pending": false,
+  "decision_phase_selection_authority": "user_delegated_to_agent",
+  "formal_evaluation_allowed": false,
+  "range_boundary_policy": "Engineering range extended 2h to finish final hold; formal labels must purge trades whose scheduled close is outside evaluation/split bounds."
+}

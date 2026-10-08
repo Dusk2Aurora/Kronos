@@ -1,0 +1,108 @@
+# 独立开发期方案；原 E00 保留，执行状态以实验 registry 和 TODO 为准。
+schema_version: 1
+experiment_family: E00R
+status: preregistered_design_for_development
+design_context: post_E00_development_results_inspected_exploratory_revision
+research_report: research/initialization/baseline_revision_research.md
+diagnostic_run: research/runs/baseline_redesign_diagnostic_20261008
+inherit_immutable_market_timing_costs_splits_from: research/configs/initial_experiment.yaml
+preserve_original_E00: true
+final_holdout_access: forbidden
+frozen_representation_extraction: forbidden
+
+target:
+  source: independent_reference_trade_base_profit_ratio
+  transformation: multiply_by_10000
+  unit: bps_net_of_7bps_per_side_proxy_and_realized_funding
+  label_table: research/data/labels/reference_labels_20261008_phase4/labels_forbidden_as_features.csv
+  future_outcomes_as_features: forbidden
+
+ordinary_features:
+  primary: original_13_plus_6_direction_aligned_log_returns
+  primary_count: 19
+  direction_aligned_horizons_hours: [1, 4, 12, 24, 72, 168]
+  interaction_formula: fixed_momentum_direction_times_existing_log_return
+  ablation: original_13_same_Ridge_head_and_gate_rules
+  choose_feature_set_by_development_test_performance: forbidden
+  E01_E02_common_ordinary_features: primary_19
+
+head:
+  type: Ridge
+  objective: mean_squared_error_plus_lambda_times_squared_coefficient_norm
+  lambda_candidates: [0.001, 0.01, 0.1, 1.0]
+  sklearn_alpha_formula: training_sample_count_times_lambda
+  fit_intercept: true
+  solver: svd
+  preprocessing: StandardScaler_fit_training_fold_only
+  selection: lowest_chronological_validation_MSE_bps_squared
+  tie_break: larger_lambda
+  target_clipping: none
+  sample_weight: null
+  deterministic_head_no_redundant_seed_repeats: true
+  stress_policy: reuse_base_predictions_and_signals_without_refit
+  E00R_E01R_E02R_same_head_and_selection_grid: true
+
+actions:
+  information_gate:
+    primary_validation_target_coverage: 0.5
+    sensitivity_validation_target_coverage: [0.25, 0.75]
+    cutoff: numpy_quantile_validation_score_1_minus_q_linear
+    decision: score_greater_than_or_equal_to_fixed_validation_cutoff
+    choose_best_coverage_by_results: forbidden
+    test_period_top_k_or_recalculate_cutoff: forbidden
+    score_ties: include_all_at_cutoff_and_report_actual_coverage
+    purpose: selection_information_probe_not_claim_of_profitable_trading
+  economic_gate:
+    decision: predicted_base_net_return_bps_strictly_greater_than_zero
+    costs_subtracted_again: false
+    force_minimum_participation: false
+    purpose: estimated_positive_expected_net_return_action_subject_to_empirical_validation
+
+controls:
+  retain: [cash, buy_hold, fixed_momentum, constant_half_exposure, vol_target, legacy_E00_logistic_gate]
+  prediction_null: training_fold_mean_net_return
+  executable_random_gate:
+    score: SHA256_UTF8_seed_pipe_opportunity_id_first_64_bits_divided_by_2_to_64
+    participate: hash_score_less_than_q
+    seeds: [17, 29, 43]
+    uses_future_counts_or_labels: false
+    actual_coverage_exactly_q: not_guaranteed
+  periodic_half_gate:
+    rule: fixed_8h_UTC_grid_opportunity_index_modulo_2
+    offsets: [0, 1]
+    choose_better_offset: forbidden
+  matched_random_diagnostic:
+    strata: UTC_month_and_fixed_momentum_direction
+    selected_count: match_actual_model_count_in_each_stratum
+    role: posthoc_selection_null_not_executable_policy
+    interval: random_draw_percentiles_not_performance_confidence_interval
+
+evaluation:
+  all_attempts_registered_before_run: true
+  development_status: exploratory_not_new_clean_OOS
+  prediction_metrics: [MSE_vs_training_mean, MAE, score_net_return_rank_correlation, tail_concentration]
+  reference_metrics: [participation, selected_mean_net_bps, selected_vs_matched_random_lift, gated_net_bps_per_eligible_opportunity]
+  portfolio_engine: official_Freqtrade
+  portfolio_metrics: [quarterly_net_return_vs_cash, quarterly_increment_vs_ordinary_gate, official_closed_trade_drawdown, trade_count, funding, turnover]
+  hourly_mark_to_market_drawdown_certified: false
+  paired_dependence_check:
+    method: common_calendar_stationary_block_bootstrap_within_each_fold
+    series: daily_sum_of_difference_in_gated_independent_reference_net_bps
+    primary_mean_block_days: 7
+    sensitivity_mean_block_days: [3, 14]
+    draws: 5000
+    seed: 17
+    scope: reference_opportunity_utility_not_bootstrapped_Freqtrade_portfolio_return
+    assumptions: approximate_within_fold_stationarity_and_sufficient_effective_blocks
+  information_claim: positive_selection_lift_and_uncertainty_evidence_vs_noninformative_controls_required
+  profitability_claim: positive_actual_net_return_vs_cash_and_cost_stress_evidence_required
+  sparse_economic_gate: report_insufficient_trade_evidence_instead_of_lowering_cutoff_to_force_trades
+  legacy_promotion_screen: retain_as_historical_relative_screen_not_sufficient_for_new_information_or_profitability_claim
+
+execution_order:
+  - register_E00R_and_save_full_sources_configs_inputs
+  - implement_and_verify_net_return_target_direction_interactions_and_training_isolation
+  - run_original13_and_primary19_Ridge_variants_on_development_folds_only
+  - run_information_and_economic_gates_and_noninformative_controls_in_Freqtrade
+  - assess_paired_information_and_absolute_cash_comparison_record_negative_results
+  - lock_common_E00R_E01R_E02R_protocol_before_any_frozen_extraction

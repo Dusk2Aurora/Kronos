@@ -1,0 +1,66 @@
+schema_version: 2
+instrument: BTC-USDT-SWAP
+timezone: UTC
+range_semantics: '[history_start, history_end_exclusive)'
+collection_ranges:
+  candles: '[evaluation_start_minus_lookback_bars, evaluation_end_exclusive)'
+  marks_and_funding: '[evaluation_start, evaluation_end_exclusive)'
+  warmup_bars: configured_timing_lookback_bars
+  candle_warmup_flag: is_warmup_true_before_evaluation_start
+candles:
+  endpoint: https://www.okx.com/api/v5/market/history-candles
+  bar: 1H
+  timestamp: bar_open_UNIX_milliseconds
+  completed_only: confirm_equals_1
+  volume: {source_field: volCcy, unit: BTC}
+  amount: {source_field: volCcyQuote, unit: USDT, meaning: actual_quote_turnover}
+  raw_contract_volume: {source_field: vol, unit: contracts}
+  missing_turnover: reject
+  freqtrade_amount_preservation: retain_original_candles_csv_as_timestamp_joined_sidecar
+  freqtrade_native_ohlcv_columns: [date, open, high, low, close, volume]
+  gap_fill: forbidden
+  conflicting_duplicates: reject
+availability:
+  available_at: bar_close_at_plus_configured_60_seconds
+  availability_is_measured: false
+  basis: conservative_research_assumption
+  collected_at: collection_metadata_not_point_in_time_availability_evidence
+funding:
+  archive_listing: https://www.okx.com/api/v5/public/market-data-history
+  archive_month_boundary_timezone: UTC+08:00
+  download_host_allowlist: [static.okx.com]
+  archive_columns: [instrument_name, funding_rate, funding_time]
+  archive_time_unit: UNIX_milliseconds
+  archive_rate: realized_settlement_rate
+  bridge_endpoint: https://www.okx.com/api/v5/public/funding-rate-history
+  bridge_rate_field: realizedRate
+  predictive_fundingRate_field: forbidden
+  overlap_absolute_tolerance: 0.00000000000001
+  usage: ex_post_labels_and_ledger_only
+  signed_ledger: positive_rate_long_pays_short_receives
+  completeness: interval_audit_is_not_proof_of_historical_settlement_schedule
+  historical_schedule_completeness_proven: false
+  independent_schedule_evidence: limitation_not_published_source_coverage_failure
+  coverage_acceptance: independent_raw_reconstruction_monthly_grid_and_REST_bridge_audit
+  formal_evaluation_approval: managed_by_experiment_config_after_independent_data_audit
+  interval_over_8_hours: suspected_missing_requires_review
+  missing_event_fill: forbidden
+mark_prices:
+  endpoint: https://www.okx.com/api/v5/market/history-mark-price-candles
+  bar: 1H
+  timestamp: bar_open_UNIX_milliseconds
+  completed_only: confirm_equals_1
+  settlement_mark_proxy: hourly_bar_open_at_settlement_time
+  tick_exact_or_actual_account_debit: false
+  funding_cashflow_to_position: '-signed_base_units * settlement_mark_proxy * realized_rate'
+  trade_price_substitution: forbidden
+  gap_fill: forbidden
+  funding_join: exact_UTC_timestamp_one_original_mark_per_funding_event
+  funding_off_hourly_grid_or_unmatched: structural_audit_not_ready
+snapshot:
+  immutable_directory: true
+  preserve_raw_pages_and_archive_zip: true
+  source_url_collected_at_and_sha256: required
+  ready_for_labeling: structural_data_quality_only_not_schedule_proof_or_formal_evaluation_approval
+  structural_audit_failure_status: audit_not_ready
+  request_or_parsing_failure_status: failed

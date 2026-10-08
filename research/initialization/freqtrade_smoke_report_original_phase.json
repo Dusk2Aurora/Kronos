@@ -1,0 +1,27 @@
+{
+  "status": "engineering_smoke_passed_not_formal_experiment",
+  "timerange": "20240101-20240108",
+  "result_archive": "D:\\file\\freqtrade\\user_data\\kronos_research\\smoke_results\\base\\backtest-result-2026-10-08_01-22-24.zip",
+  "result_sha256": "3906e2ac9c16833ebff7a644a3e5b431ab3b5e82af156f7ca0f2a8d9f40aabb7",
+  "trades": 21,
+  "strict_4h_exits": true,
+  "entry_hours_UTC": [
+    1,
+    9,
+    17
+  ],
+  "decision_hours_UTC": [
+    0,
+    8,
+    16
+  ],
+  "fees_per_side": 0.0007,
+  "entry_exit_prices_match_native_bar_opens": true,
+  "funding_in_smoke_trades": "zero_by_schedule_no_settlement_crossed",
+  "separate_official_funding_function_check": {
+    "matched_events": 3012,
+    "long_short_and_inclusive_boundaries_checked": true
+  },
+  "decision_phase_review_pending": true,
+  "formal_evaluation_allowed": false
+}

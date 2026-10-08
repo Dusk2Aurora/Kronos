@@ -1,0 +1,297 @@
+# 研究初始化记录；允许历史采集及基线准备，尚不提取 Kronos 表征。
+schema_version: 1
+status: M0_accepted_ready_to_encode
+stage: ready_to_encode
+task_id: 9
+
+confirmed_fields:
+  instrument: BTC-USDT-SWAP
+  history_start: '2024-01-01T00:00:00Z'
+  history_end_exclusive: '2026-10-01T00:00:00Z'
+  market: OKX_USDT_perpetual
+  timeframe: 1h
+  lookback_bars: 256
+  holding_horizon_bars: 4
+  decision_cadence_hours: 8
+  decision_phase_authority: user_delegated_to_agent
+  decision_hours_utc: [4, 12, 20]
+  task: fixed_momentum_participate_or_skip
+  costs: research_assumption_fee_5bps_slippage_2bps_per_side_stress_2x
+  freqtrade_cost_proxy_per_side: [0.0007, 0.0014]
+
+engineering_defaults:
+  # 工程默认不是用户额外确认；正式评估前应审阅并锁定。
+  instrument: BTC-USDT-SWAP
+  ccxt_symbol: BTC/USDT:USDT
+  instrument_rationale: perpetual_equivalent_of_original_BTC_example
+  momentum_lookback_bars: 24
+  availability_delay_seconds: 60
+  availability_delay_basis: conservative_research_assumption_not_measured
+  max_abs_position: 1.0
+  leverage: 1.0
+
+market:
+  exchange: okx
+  instrument: BTC-USDT-SWAP
+  ccxt_symbol: BTC/USDT:USDT
+  instrument_type: linear_USDT_perpetual
+  asset_count: 1
+  base_currency: BTC
+  quote_currency: USDT
+  settlement_currency: USDT
+  timeframe: 1h
+  timezone: UTC
+  history_start: '2024-01-01T00:00:00Z'
+  history_end_exclusive: '2026-10-01T00:00:00Z'
+
+timing:
+  input_bars: completed_only
+  bar_timestamp_semantics: bar_open_time
+  lookback_bars: 256
+  decision_cadence_hours: 8
+  decision_hours_utc: [4, 12, 20]
+  decision_phase_confirmation_pending: false
+  decision_phase_basis: agent_selected_under_user_authorization_to_cross_observed_funding_settlement
+  decision_cadence_basis: user_confirmed_avoid_freqtrade_same_candle_reentry_conflict
+  decision_timestamp: scheduled_UTC_boundary_plus_availability_delay
+  availability_delay_seconds: 60
+  availability_delay_is_measured: false
+  earliest_entry: strict_next_bar_open_after_decision
+  holding_horizon_bars: 4
+  exit: entry_time_plus_4_bars
+  overlap_policy: nonoverlapping_labels_and_independent_reference_trades
+
+fixed_strategy:
+  momentum_lookback_bars: 24
+  direction_formula: sign(log(close_t / close_t_minus_24))
+  direction_zero_policy: flat
+  gate_actions: [0, 1]
+  gate_meaning: [skip, participate]
+  allow_direction_reversal: false
+  position_formula: gate_action * fixed_momentum_direction
+  max_abs_position: 1.0
+  leverage: 1.0
+
+data_contract:
+  model_input_fields: [open, high, low, close, volume, amount]
+  volume:
+    source_field: volCcy
+    normalized_unit: base_BTC
+    raw_contracts_field: vol
+    raw_contract_volume: preserve_separately
+    conversion: use_verified_instrument_contract_specification
+  amount:
+    source_field: volCcyQuote
+    normalized_unit: quote_USDT
+    definition: actual_traded_quote_turnover
+    allow_price_times_volume_proxy_for_formal_evaluation: false
+    missing_actual_turnover_policy: reject_formal_evaluation
+  missing_bars:
+    policy: reject_windows_crossing_gaps
+    zero_fill: forbidden
+    backward_fill: forbidden
+  funding:
+    settlement_events_required: true
+    signed_payments_and_receipts: true
+    usage: realized_label_and_ledger_only
+    future_realized_funding_in_features: forbidden
+    settlement_coverage_verified: true
+    settlement_coverage_basis: independently_audited_published_official_archives_and_REST
+    independent_exchange_internal_schedule_proof: false
+    official_archive_and_REST_structural_coverage_verified: true
+    snapshot_id: 20261008T011408835523Z_7bb06df6f064
+    observed_settlement_interval_hours: 8
+    original_mark_join_verified: true
+
+labels_and_costs:
+  label_basis: incremental_realized_net_return_of_participation_versus_skip
+  classification_target: independent_reference_trade_net_return_greater_than_zero
+  zero_momentum_label_policy: no_participation_label_skip_opportunity
+  include_fees: true
+  include_slippage: true
+  include_realized_funding: true
+  fee_rate: 0.0005
+  slippage_rate: 0.0002
+  backtest_cost_method: user_confirmed_combined_fee_expense_proxy_not_price_slippage
+  freqtrade_fee_per_side: 0.0007
+  freqtrade_stress_fee_per_side: 0.0014
+  funding_boundary_policy: freqtrade_includes_entry_and_exit_timestamp
+  cost_pressure_multiplier: 2
+  cost_basis: user_confirmed_research_assumption_not_actual_account_charges
+  cost_rate_unit: fraction_of_traded_notional_per_side
+  reference_trade_stake_USDT: 1000
+  reference_paper_wallet_USDT: 10000000
+  reference_sizing_basis: fixed_notional_for_independent_labels_not_portfolio_performance
+  reference_label_availability: scheduled_exit_plus_60_seconds_conservative_assumption
+  verified_label_bundle: research/data/labels/reference_labels_20261008_phase4
+  verified_label_rows: 3011
+  label_audit_report: research/initialization/reference_labels_report.json
+  minimum_economic_increment_for_promotion: 0.01
+  economic_increment_unit: absolute_difference_in_quarterly_portfolio_return_fraction
+  promotion_selection_data: development_walk_forward_test_folds_only
+  final_holdout_for_promotion_selection: forbidden
+  promotion_protocol:
+    status: locked_before_development_performance_inspection
+    lock_basis: previously_proposed_recommended_default_proceeded_after_user_continue
+    positive_base_increment_folds_minimum: 3
+    base_increment_median_minimum: 0.01
+    official_closed_trade_drawdown_median_change_maximum: 0.0
+    stress_increment_median: strictly_positive
+    E00_comparator: fixed_momentum
+    E01_E02_comparator: ordinary_features_gate
+    role: research_economic_screen_not_automatic_live_trading_or_M0_engineering_approval
+
+backtest_engine:
+  name: freqtrade
+  version: '2026.9'
+  repository_path: 'D:/file/freqtrade'
+  repository_commit: 1f394eaebc2f46a83d26971388628707802f8602
+  python: 'D:/file/freqtrade/.venv/Scripts/python.exe'
+  trading_mode: futures
+  margin_mode: isolated
+  canonical_adapter_directory: research/freqtrade
+  actual_quote_turnover_storage: immutable_snapshot_sidecar
+  missing_funding_rate_fallback: forbidden
+  missing_mark_price_fill: forbidden
+  execution_mode: research_backtest
+  live_trading_enabled: false
+
+splits:
+  method: chronological_walk_forward
+  status: locked_for_first_round
+  lock_basis: proposed_split_proceeded_after_user_continue
+  range_semantics: '[start, end_exclusive)'
+  walk_forward_dates:
+    - id: WF01
+      train: ['2024-01-01T00:00:00Z', '2025-01-01T00:00:00Z']
+      validation: ['2025-01-01T00:00:00Z', '2025-04-01T00:00:00Z']
+      test: ['2025-04-01T00:00:00Z', '2025-07-01T00:00:00Z']
+    - id: WF02
+      train: ['2024-01-01T00:00:00Z', '2025-04-01T00:00:00Z']
+      validation: ['2025-04-01T00:00:00Z', '2025-07-01T00:00:00Z']
+      test: ['2025-07-01T00:00:00Z', '2025-10-01T00:00:00Z']
+    - id: WF03
+      train: ['2024-01-01T00:00:00Z', '2025-07-01T00:00:00Z']
+      validation: ['2025-07-01T00:00:00Z', '2025-10-01T00:00:00Z']
+      test: ['2025-10-01T00:00:00Z', '2026-01-01T00:00:00Z']
+    - id: WF04
+      train: ['2024-01-01T00:00:00Z', '2025-10-01T00:00:00Z']
+      validation: ['2025-10-01T00:00:00Z', '2026-01-01T00:00:00Z']
+      test: ['2026-01-01T00:00:00Z', '2026-04-01T00:00:00Z']
+  final_fit:
+    id: FINAL
+    train: ['2024-01-01T00:00:00Z', '2026-01-01T00:00:00Z']
+    validation: ['2026-01-01T00:00:00Z', '2026-04-01T00:00:00Z']
+  final_holdout: ['2026-04-01T00:00:00Z', '2026-10-01T00:00:00Z']
+  checkpoint_time_interpretation: earlier_folds_are_retrospective_research_training_cutoff_unproven
+  fit_preprocessing_on: training_fold_only
+  fit_model_on: training_fold_only
+  label_crossing_boundary_policy: purge
+  label_availability_crossing_boundary_policy: purge
+  selection_on_locked_test: forbidden
+  threshold_selection_on_locked_test: forbidden
+
+frozen_representation:
+  enabled_in_current_stage: false
+  model:
+    repository: NeoQuasar/Kronos-small
+    revision: 901c26c1332695a2a8f243eb2f37243a37bea320
+  tokenizer:
+    repository: NeoQuasar/Kronos-Tokenizer-base
+    revision: 0e0117387f39004a9016484a186a908917e22426
+  normalization:
+    context: historical_lookback_only
+    std_function: numpy.std
+    ddof: 0
+    epsilon: 0.00001
+    clip_abs: 5.0
+  pooling: last_valid_hidden
+  inference_in_current_stage: forbidden
+  feature_extraction_in_current_stage: forbidden
+
+first_round_head:
+  type: regularized_logistic_regression
+  C: [0.1, 1.0, 10.0]
+  decision_threshold: 0.5
+  seed_set: [17, 29, 43]
+  record_all_attempts: true
+  training_in_current_stage: allowed_for_E00_ordinary_features_only
+  training_enabled_from_stage: 7
+  preprocessing: StandardScaler_fit_training_fold_only
+  hyperparameter_selection: lowest_validation_binary_log_loss
+  tie_break: ascending_C_then_seed
+  solver: lbfgs
+  class_weight: null
+  max_iter: 2000
+  stress_policy: reuse_base_cost_trained_predictions_without_refit
+
+baselines:
+  status: verified_development_only
+  revision_run: research/runs/E00R_20261008_phase4_v1
+  revision_results: research/initialization/E00R_results.md
+  roles_document: research/baselines/E00_baseline_roles.md
+  report: research/initialization/e00_report.json
+  results: research/initialization/E00_results.md
+  initial_portfolio_USDT: 10000
+  tradable_balance_ratio: 0.99
+  vol_target_annual: 0.20
+  vol_target_history_hours: 72
+  annualization_hours: 8760
+  exposure_clip: [0.0, 1.0]
+  buy_hold: long_from_first_eligible_entry_until_last_hour_open_of_each_test_segment
+  test_portfolios: independent_reset_wallet_per_fold
+  drawdown_basis: official_Freqtrade_closed_trade_equity_not_intrabar_mark_to_market
+  required:
+    - cash
+    - buy_hold
+    - fixed_momentum
+    - constant_half_exposure
+    - vol_target
+    - ordinary_features_gate
+
+experiments:
+  - id: E00
+    purpose: fixed_rule_baselines_and_ordinary_features_gate
+    status: completed_development_only
+    registry: research/registry/E00_20261008_phase4_v1.json
+    economic_screen_passed: true
+    information_value_over_cash: not_established_sparse_8_of_1091_participation
+    sparse_gate_diagnosis: research/initialization/E00_sparse_gate_diagnosis.md
+    predictive_validity: not_established_test_AUC_near_0_5
+    economic_screen_limitation: cash_also_passes_against_losing_momentum
+  - id: E01
+    purpose: ordinary_features_plus_frozen_Kronos_same_head
+    status: pending_run
+  - id: E02
+    purpose: ordinary_features_plus_random_frozen_backbone_same_head
+    tokenizer_policy: preserve_original_pretrained_tokenizer
+    status: pending_run
+  - id: E00R
+    purpose: net_return_ordinary_baseline_information_economic_and_noninformative_controls
+    status: completed_exploratory_development
+    registry: research/registry/E00R_20261008_phase4_v1.json
+    results: research/initialization/E00R_results.md
+    primary_features: ordinary19_with_original13_ablation
+    head: Ridge
+    information_value: not_established
+    profitability_over_cash: not_established
+
+evaluation_readiness:
+  data_integrity_accepted: true
+  data_integrity_acceptance_scope: published_official_source_coverage_and_fidelity
+  data_integrity_audit: research/initialization/data_integrity_audit.json
+  remote_data_recheck: research/initialization/data_remote_recheck.json
+  formal_evaluation_allowed: false
+  formal_evaluation_scope_note: final_holdout_remains_forbidden_until_E00_E01_E02_protocols_are_locked
+  development_E00_backtests_allowed: true
+  final_holdout_evaluation_allowed: false
+  ready_to_encode: true
+  blockers: []
+  M0_acceptance_report: research/initialization/M0_acceptance_report.json
+  information_value_over_cash_established: false
+  next_research_action: lock_common_E00R_E01R_E02R_comparison_protocol_before_frozen_extraction
+  baseline_revision_research: research/initialization/baseline_revision_research.md
+  baseline_revision_proposal: research/configs/baseline_revision_v2.yaml
+  baseline_revision_status: E00R_completed_exploratory_common_protocol_lock_pending
+  current_task_stop: before_any_frozen_representation_extraction
+  causality_report: research/initialization/e00_causality_report.json

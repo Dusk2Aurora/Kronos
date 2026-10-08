@@ -1,0 +1,42 @@
+{
+  "experiment_id": "E00_20261008_phase4_v1",
+  "status": "verified_development_only",
+  "engine_runs": 48,
+  "training_attempts": 36,
+  "checks": {
+    "positive_base_increment_folds": true,
+    "median_base_increment": true,
+    "median_drawdown_change": true,
+    "median_stress_increment": true
+  },
+  "economic_screen_passed": true,
+  "positive_base_increment_folds": 4,
+  "median_base_increment_pp": 39.9383611972,
+  "median_closed_trade_drawdown_change_pp": -41.08560690327528,
+  "median_stress_increment_pp": 58.7197545778,
+  "final_holdout_inspected": false,
+  "frozen_representations_extracted": false,
+  "drawdown_basis": "official_Freqtrade_closed_trade_equity_not_intrabar_mark_to_market",
+  "conclusion": "support_further_research",
+  "artifacts": {
+    "metrics": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_v1\\metrics.csv",
+    "increments": "D:\\file\\Kronos-master\\research\\runs\\E00_20261008_phase4_v1\\gate_increments.csv"
+  },
+  "diagnostics": {
+    "selected_gate_trades": 8,
+    "development_eligible_opportunities": 1091,
+    "participation_fraction": 0.007332722273143905,
+    "gate_beats_cash_folds": 1,
+    "gate_equals_cash_folds": 1,
+    "gate_loses_to_cash_folds": 2,
+    "interpretation": "Economic screen relative to losing momentum passes; sparse gate does not establish positive information value over cash"
+  },
+  "source_registry": "D:\\file\\Kronos-master\\research\\registry\\E00_20261008_phase4_v1.json",
+  "metrics_sha256": "7729157d03d571d253e1d2f1acb38b21208453e20179aaefd8827549325b1f01",
+  "presentation_artifact_sha256": {
+    "diagnostics.json": "24c82095daee49ef18830d8057239db82e948cdf379f433cfe9c85571b44d10c",
+    "participation_vs_cash.csv": "815ff84470f84ccf47675e9c70c9de7af95a2a4b0e111435eb04073f4fd26381",
+    "participation_vs_cash.png": "eb5ad5cd0c91006edd57f2ea6c3f27027b754da2bf6ef599dcc99bb3b4cf69d3",
+    "participation_vs_cash.svg": "16812d560f24ae4cb54b5cb8e6e798652f87f137670db746fb055da12c0dac89"
+  }
+}

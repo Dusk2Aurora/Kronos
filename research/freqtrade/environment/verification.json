@@ -1,0 +1,40 @@
+{
+  "python": "3.11.14 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 18:30:03) [MSC v.1929 64 bit (AMD64)]",
+  "prefix": "D:\\file\\freqtrade\\.venv",
+  "base_prefix": "E:\\conda\\envs\\kronos",
+  "user_site": false,
+  "package_paths": {
+    "numpy": "D:\\file\\freqtrade\\.venv\\Lib\\site-packages\\numpy\\__init__.py",
+    "pandas": "D:\\file\\freqtrade\\.venv\\Lib\\site-packages\\pandas\\__init__.py",
+    "talib": "D:\\file\\freqtrade\\.venv\\Lib\\site-packages\\talib\\__init__.py",
+    "ccxt": "D:\\file\\freqtrade\\.venv\\Lib\\site-packages\\ccxt\\__init__.py",
+    "freqtrade": "D:\\file\\freqtrade\\freqtrade\\__init__.py"
+  },
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "talib": "0.8.0",
+    "ccxt": "4.5.84",
+    "freqtrade": "2026.9"
+  },
+  "repository_commit": "1f394eaebc2f46a83d26971388628707802f8602",
+  "requirements_lock_sha256": "86769df600a934735259273849bce466b15e1a0548987f45867f08427db4a642",
+  "checks": {
+    "pip_check": "passed",
+    "freqtrade_version": "passed",
+    "backtesting_help": "passed",
+    "talib_import": "passed",
+    "environment_isolation_and_talib_calculation": "passed",
+    "base_config_schema": "passed",
+    "stress_config_schema": "passed",
+    "official_strategy_discovery": "passed",
+    "offline_strategy_timing_and_causality": "passed",
+    "full_snapshot_native_import_roundtrip": "passed",
+    "funding_crossing_phase_offline_and_market_smoke": "passed"
+  },
+  "current_decision_hours_utc": [
+    4,
+    12,
+    20
+  ]
+}

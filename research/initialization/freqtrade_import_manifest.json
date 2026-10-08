@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "status": "imported_and_roundtrip_verified",
+  "created_at": "2026-10-08T01:18:46.390889+00:00",
+  "pair": "BTC/USDT:USDT",
+  "timeframe": "1h",
+  "format": "feather",
+  "freqtrade_repository": "D:\\file\\freqtrade",
+  "freqtrade_commit": "1f394eaebc2f46a83d26971388628707802f8602",
+  "snapshot": "D:\\file\\Kronos-master\\research\\data\\snapshots\\20261008T011408835523Z_7bb06df6f064",
+  "snapshot_id": "20261008T011408835523Z_7bb06df6f064",
+  "snapshot_manifest_sha256": "bc95c980c0af73f1f304f2479bc4e8b2f697fa8902b135b976069a0c4b951448",
+  "snapshot_csv_sha256": {
+    "candles.csv": "9d4e1f62322cc4455f975efc8648691ca293f3cc22638552c47dd9d6a2da1a23",
+    "mark_prices.csv": "3854a0c75f22e873e83448eac442d4de7d04f9e31e82bea7bf2de1d383f82131",
+    "funding.csv": "a4eec536727b0c49b90510984cfbcae4e114aa2e27aec902f5e0ef12e6c0c62a"
+  },
+  "quality_report_sha256": "fec09619583b6d35c4e7d39d48cc52ac186ed96a67d4dc42d67c63f192fef724",
+  "data_start": "2023-12-21T08:00:00Z",
+  "evaluation_start": "2024-01-01T00:00:00Z",
+  "evaluation_end_exclusive": "2026-10-01T00:00:00Z",
+  "warmup_bars": 256,
+  "actual_amount_sidecar": "D:\\file\\Kronos-master\\research\\data\\snapshots\\20261008T011408835523Z_7bb06df6f064\\candles.csv",
+  "mark_volume": "zero_native_schema_placeholder_not_measured_volume",
+  "funding_encoding": "original_signed_realized_events_only_no_zero_expansion",
+  "formal_evaluation_allowed": false,
+  "formal_evaluation_blockers": [
+    "historical_funding_settlement_schedule_unproven"
+  ],
+  "backtest_boundary_caveat": "Freqtrade stopdt is inclusive; outer labels and trades must enforce evaluation_start <= time < evaluation_end_exclusive and reject boundary-crossing trades",
+  "roundtrip": {
+    "futures": {
+      "passed": true,
+      "rows": 24352,
+      "timestamps_exact": true,
+      "numeric_values_exact": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0,
+      "fill_missing": false,
+      "drop_incomplete": false
+    },
+    "mark": {
+      "passed": true,
+      "rows": 24096,
+      "timestamps_exact": true,
+      "numeric_values_exact": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0,
+      "fill_missing": false,
+      "drop_incomplete": false
+    },
+    "funding_rate": {
+      "passed": true,
+      "rows": 3012,
+      "timestamps_exact": true,
+      "numeric_values_exact": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0,
+      "fill_missing": false,
+      "drop_incomplete": false
+    }
+  },
+  "files": {
+    "futures\\BTC_USDT_USDT-1h-funding_rate.feather": "a8ff400f61ac5cfe6a434691493de1f466e913c0809346d1847ae048c776cfba",
+    "futures\\BTC_USDT_USDT-1h-futures.feather": "b410c6ae5b1b1140cf5e04c215fccf7848c292eefda9e17a7ee9d961304e689b",
+    "futures\\BTC_USDT_USDT-1h-mark.feather": "ca3df43e77ce38f04ffbf741c33ad0b9575f65ec38c0f888de9e9910d6e5fc3d"
+  }
+}

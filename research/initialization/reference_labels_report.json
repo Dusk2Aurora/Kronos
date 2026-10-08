@@ -1,0 +1,127 @@
+{
+  "status": "official_reference_labels_verified",
+  "snapshot_id": "20261008T011408835523Z_7bb06df6f064",
+  "opportunity_rows": 3012,
+  "label_rows": 3011,
+  "reference_trade_rows": {
+    "base": 3011,
+    "stress": 3011
+  },
+  "label_basis": "independent_reference_trade_net_return_greater_than_zero",
+  "labelable_at_policy": "exit_plus_60_seconds",
+  "outcome_fields_forbidden_as_features": true,
+  "bundle_path": "D:\\file\\Kronos-master\\research\\data\\labels\\reference_labels_20261008_phase4",
+  "manifest_sha256": "47a4379d2e96d7ce2df7ee23f2c1a0fafc410ce6fac73d53b8c9439549decb86",
+  "split_counts": [
+    {
+      "fold": "FINAL",
+      "role": "train",
+      "candidate_rows": 2193,
+      "included_rows": 2192,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "FINAL",
+      "role": "validation",
+      "candidate_rows": 270,
+      "included_rows": 269,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "WF01",
+      "role": "test",
+      "candidate_rows": 273,
+      "included_rows": 272,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "WF01",
+      "role": "train",
+      "candidate_rows": 1098,
+      "included_rows": 1097,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "WF01",
+      "role": "validation",
+      "candidate_rows": 270,
+      "included_rows": 269,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "WF02",
+      "role": "test",
+      "candidate_rows": 276,
+      "included_rows": 275,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "WF02",
+      "role": "train",
+      "candidate_rows": 1368,
+      "included_rows": 1367,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "WF02",
+      "role": "validation",
+      "candidate_rows": 273,
+      "included_rows": 272,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "WF03",
+      "role": "test",
+      "candidate_rows": 276,
+      "included_rows": 275,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "WF03",
+      "role": "train",
+      "candidate_rows": 1641,
+      "included_rows": 1640,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "WF03",
+      "role": "validation",
+      "candidate_rows": 276,
+      "included_rows": 275,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "WF04",
+      "role": "test",
+      "candidate_rows": 270,
+      "included_rows": 269,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "WF04",
+      "role": "train",
+      "candidate_rows": 1917,
+      "included_rows": 1916,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "WF04",
+      "role": "validation",
+      "candidate_rows": 276,
+      "included_rows": 275,
+      "excluded_rows": 1
+    },
+    {
+      "fold": "final_holdout",
+      "role": "holdout",
+      "candidate_rows": 549,
+      "included_rows": 548,
+      "excluded_rows": 1
+    }
+  ],
+  "excluded_memberships": 15,
+  "research_end_excluded_opportunities": 1,
+  "role_disjoint_and_holdout_isolated": true,
+  "locked_holdout_performance_inspected": false,
+  "training_or_encoding_performed": false
+}

@@ -1,0 +1,857 @@
+{
+  "status": "passed",
+  "snapshot_id": "20261008T011408835523Z_7bb06df6f064",
+  "checked_at": "2026-10-08T01:35:20.932623+00:00",
+  "script_sha256": "879edec68b9f7c1102de9ebca934581406bb72a5cb8c85556a5bbac7dd30ca65",
+  "snapshot_manifest_sha256": "bc95c980c0af73f1f304f2479bc4e8b2f697fa8902b135b976069a0c4b951448",
+  "candle_samples": [
+    {
+      "kind": "trade",
+      "timestamp_ms": 1704067200000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1704067200000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1705320000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1705320000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1707998400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1707998400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1709208000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1709208000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1710504000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1710504000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1713182400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1713182400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1715774400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1715774400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1718452800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1718452800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1721044800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1721044800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1723723200000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1723723200000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1726401600000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1726401600000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1728993600000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1728993600000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1731672000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1731672000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1734264000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1734264000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1736942400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1736942400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1739620800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1739620800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1742040000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1742040000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1744718400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1744718400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1747310400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1747310400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1749988800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1749988800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1752580800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1752580800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1755259200000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1755259200000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1757937600000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1757937600000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1760529600000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1760529600000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1763208000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1763208000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1765800000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1765800000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1768478400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1768478400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1771156800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1771156800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1773576000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1773576000000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1776254400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1776254400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1778846400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1778846400000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1781524800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1781524800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1784116800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1784116800000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1786795200000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1786795200000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1789473600000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1789473600000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "trade",
+      "timestamp_ms": 1790809200000,
+      "all_numeric_fields_exact": true
+    },
+    {
+      "kind": "mark",
+      "timestamp_ms": 1790809200000,
+      "all_numeric_fields_exact": true
+    }
+  ],
+  "warmup_boundary_refetch_exact": true,
+  "funding_archive_refetch": [
+    {
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202401/BTC-USDT-SWAP-fundingrates-2024-01.zip?v=1000",
+      "events": 93,
+      "semantic_rows_exact": true,
+      "bytes_identical": true
+    },
+    {
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202505/BTC-USDT-SWAP-fundingrates-2025-05.zip?v=1000",
+      "events": 93,
+      "semantic_rows_exact": true,
+      "bytes_identical": true
+    },
+    {
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202609/BTC-USDT-SWAP-fundingrates-2026-09.zip?v=1000",
+      "events": 90,
+      "semantic_rows_exact": true,
+      "bytes_identical": true
+    }
+  ],
+  "fresh_REST_matched_events": 281,
+  "native_imported_files_hash_matched": 3,
+  "sources": [
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1704070800000",
+      "collected_at": "2026-10-08T01:34:34.840454+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\000.json",
+      "sha256": "7f5c5d068b37cc781ba291a4e33a01f8a473d46b1989e7080e6d3c0b31e7ddb3"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1704070800000",
+      "collected_at": "2026-10-08T01:34:35.445513+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\001.json",
+      "sha256": "0d6076f69bf7b94c2a4e82a63e72d1becdbda80e802561583ae39e4558cb87ef"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1705323600000",
+      "collected_at": "2026-10-08T01:34:36.059612+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\002.json",
+      "sha256": "15180c21ad4bfec2739b278c60a36e19cf928b01e61ff52b2f0858dbb6a7bac2"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1705323600000",
+      "collected_at": "2026-10-08T01:34:36.757180+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\003.json",
+      "sha256": "35abc8f5919b89fdad4562f40a99cdcebfc019673efde9b3fb62eadf9ed87767"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1708002000000",
+      "collected_at": "2026-10-08T01:34:37.350704+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\004.json",
+      "sha256": "973959613dceb1f85bfc3e7bb0492a8f56f31d25fbf2c4f609749c0ea3a7f013"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1708002000000",
+      "collected_at": "2026-10-08T01:34:37.956259+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\005.json",
+      "sha256": "aa29459b40f3c3267c1c3d985fdf2d8678d73847d81c7ce17e4553d3cce51b3d"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1709211600000",
+      "collected_at": "2026-10-08T01:34:38.580147+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\006.json",
+      "sha256": "88d4343d2c5e7d0142ccfb645f03d45e718b6d694e5e682c798188e83fdbb73a"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1709211600000",
+      "collected_at": "2026-10-08T01:34:39.186111+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\007.json",
+      "sha256": "be80c7498f9a8cb469e66fe188bcdf087cd765df302317ad126961620ad1b9cf"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1710507600000",
+      "collected_at": "2026-10-08T01:34:39.807621+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\008.json",
+      "sha256": "16f2e2f417fe4b76e9559e05bbbb0d35c39a51ab902169eba00c3730ab7397d8"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1710507600000",
+      "collected_at": "2026-10-08T01:34:40.401206+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\009.json",
+      "sha256": "a690a7a53901560ea8615ab03f87a8874e0a133906abc56441680cdb7a45464c"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1713186000000",
+      "collected_at": "2026-10-08T01:34:41.065548+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\010.json",
+      "sha256": "eb6ce48423aa02181b1e464b920c186253492d954f9238f81eac850c56739210"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1713186000000",
+      "collected_at": "2026-10-08T01:34:41.692113+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\011.json",
+      "sha256": "1937103119ad8714099e461eadfe9a9c7abead8071636fe365afd68e0dc31407"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1715778000000",
+      "collected_at": "2026-10-08T01:34:42.311159+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\012.json",
+      "sha256": "f6ae214abfe91429e21dcaeb51a467d903d701ab0dea87e249fb5282bf93075d"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1715778000000",
+      "collected_at": "2026-10-08T01:34:42.920335+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\013.json",
+      "sha256": "4ce8e6f0adfa2900152c90e9504624aec4d83cf1ee615b0114f6aa5bceca745b"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1718456400000",
+      "collected_at": "2026-10-08T01:34:43.549167+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\014.json",
+      "sha256": "680531be56b5cc186d5200fa1d0d8fd54f98d5bbde39fbe344be9c765cb6f037"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1718456400000",
+      "collected_at": "2026-10-08T01:34:44.151504+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\015.json",
+      "sha256": "84b43812032afd2afde57183b19e9f8c59aed52354911d41d62f11d49f1e0810"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1721048400000",
+      "collected_at": "2026-10-08T01:34:44.742720+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\016.json",
+      "sha256": "ddfe355827643d907e7276126a3d24b2ff24a20c1780692436b8dc0c4316e029"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1721048400000",
+      "collected_at": "2026-10-08T01:34:45.374785+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\017.json",
+      "sha256": "d5888ccd8db597e7af79815a26e1cbf084eac3839c55fe54720f2d03363956e6"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1723726800000",
+      "collected_at": "2026-10-08T01:34:45.998690+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\018.json",
+      "sha256": "3d321186225bc3a688581564a9fbc79a7e8d528367ba47ee5cfd6cb009fafcc9"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1723726800000",
+      "collected_at": "2026-10-08T01:34:46.626735+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\019.json",
+      "sha256": "72caa1c7e28f2106bdfb01d4f02f8bb34960f1539972c9e22e5125b977822c46"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1726405200000",
+      "collected_at": "2026-10-08T01:34:47.225383+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\020.json",
+      "sha256": "bafcf843d46591dd53b787a9d226b1434ed18797aee66d4ab8eb3288abb04d71"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1726405200000",
+      "collected_at": "2026-10-08T01:34:47.832976+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\021.json",
+      "sha256": "d221ca92401f9bba100636869e579a2a996d4e6bdff5cfabc0c8aef54cbcb8c6"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1728997200000",
+      "collected_at": "2026-10-08T01:34:48.439135+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\022.json",
+      "sha256": "814e75f84cf666c7d7dcdf7471381a27d5630f3677512138fd378429328256a3"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1728997200000",
+      "collected_at": "2026-10-08T01:34:49.036041+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\023.json",
+      "sha256": "b9690fe52ab38a2ff8a814e49ec50b1a8bda1176082061966ea809e35a2d5ef8"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1731675600000",
+      "collected_at": "2026-10-08T01:34:49.643587+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\024.json",
+      "sha256": "7ccd7f310d0d3b750e2bbfa42e49b2ab823d62be34ebc77b0fb910d9a9497e1b"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1731675600000",
+      "collected_at": "2026-10-08T01:34:50.254319+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\025.json",
+      "sha256": "c8be194f33e2f3bb68b5a3adc45aad72f45d50c8c29ac5d988dc0ec696ba32be"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1734267600000",
+      "collected_at": "2026-10-08T01:34:50.854858+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\026.json",
+      "sha256": "eb1f4ea04f021e821f699de11bc585dc37fa62e1e7844cc43ea4eb35022396ba"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1734267600000",
+      "collected_at": "2026-10-08T01:34:51.447585+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\027.json",
+      "sha256": "6ae1686d998771b691dd5c25f2d6300a91bbcecf7bb2abe5381aa0cf7cc94464"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1736946000000",
+      "collected_at": "2026-10-08T01:34:52.034471+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\028.json",
+      "sha256": "f5012add0b7e9cabdc852cd341733ba00ceacc7a2857f20c84b59fcfbfffca8b"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1736946000000",
+      "collected_at": "2026-10-08T01:34:52.643986+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\029.json",
+      "sha256": "0a4ed4b0027454dcbaa9a4e200fd281bbeefb6dab998760e65114ef4c293e946"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1739624400000",
+      "collected_at": "2026-10-08T01:34:53.246208+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\030.json",
+      "sha256": "f8c2efff14369e0893146dae6184a8593179a31546fae1a31b6783dba6c4a250"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1739624400000",
+      "collected_at": "2026-10-08T01:34:53.905463+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\031.json",
+      "sha256": "eedafc3a7425ea6998dde0eca5a41e3af4da22999664645db3edefbd9f0e9cf1"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1742043600000",
+      "collected_at": "2026-10-08T01:34:54.509925+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\032.json",
+      "sha256": "d0232eaa3a70c1aee1cfc30e4b62534a8418f6c2df99f3a57fd1ad382f60b610"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1742043600000",
+      "collected_at": "2026-10-08T01:34:55.115717+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\033.json",
+      "sha256": "b3309fef3e0b1b0021e8fda3ba004bf15304eb56f774293c6bc02e4801bdc2e5"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1744722000000",
+      "collected_at": "2026-10-08T01:34:55.720030+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\034.json",
+      "sha256": "6e49716967d6927df2e2b4a2da732c055d4db07eee336d0e9494aca9e7e47962"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1744722000000",
+      "collected_at": "2026-10-08T01:34:56.308548+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\035.json",
+      "sha256": "a256ea5f3ba04d1c3b6244b4cf0ce212509ed05136638dd6aca5eaa77eb94885"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1747314000000",
+      "collected_at": "2026-10-08T01:34:56.918742+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\036.json",
+      "sha256": "25d33f3956b6f335619116ae6da229746679c8ab5046384659937bcb2b381971"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1747314000000",
+      "collected_at": "2026-10-08T01:34:57.510072+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\037.json",
+      "sha256": "895932dd63b9f438ef33ac6ef153d752c46bf23ed54b2bf9c63c694df270153c"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1749992400000",
+      "collected_at": "2026-10-08T01:34:58.108400+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\038.json",
+      "sha256": "d315a14ac741fca97b72b847a478555e46b7503e35ae46fd71babfcd4825986d"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1749992400000",
+      "collected_at": "2026-10-08T01:34:58.780362+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\039.json",
+      "sha256": "d046c1fe8cfec331b74d9b7192e19733bfcc0e8591562fcc2c67338f97190bde"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1752584400000",
+      "collected_at": "2026-10-08T01:34:59.402792+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\040.json",
+      "sha256": "55a596eb80ba9fda03e61b479e223234b9513d27e43eb796e2c8168d38d762f8"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1752584400000",
+      "collected_at": "2026-10-08T01:34:59.998315+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\041.json",
+      "sha256": "513bcc19a452c48038d59b870e347243cc8a2d5e7e1fbfb4c40fd504497cbd95"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1755262800000",
+      "collected_at": "2026-10-08T01:35:00.602098+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\042.json",
+      "sha256": "e06832816efd134380e916ec956e71aeb65a720ec6d7677a4849d85f95ab7b63"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1755262800000",
+      "collected_at": "2026-10-08T01:35:01.246042+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\043.json",
+      "sha256": "148c09fad34696239efcc61627d84f0be89c102615b5c0af10194ae93356da12"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1757941200000",
+      "collected_at": "2026-10-08T01:35:01.847172+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\044.json",
+      "sha256": "113057dc527ef8e7c18fbb07c78678fb770b8b70d0015bea43933f0278999061"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1757941200000",
+      "collected_at": "2026-10-08T01:35:02.458955+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\045.json",
+      "sha256": "ce5d4292946f9af96cb8ac00f42bd4011726ec8bfc1d3447a6f624160ce0196a"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1760533200000",
+      "collected_at": "2026-10-08T01:35:03.045406+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\046.json",
+      "sha256": "37e8df9f8cab36a193ad9f78d3c30cb27f37f170119d100a8ffc8a9d60bc3331"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1760533200000",
+      "collected_at": "2026-10-08T01:35:03.677945+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\047.json",
+      "sha256": "f21ad57bcebf9ab789b33c41ca0163ebbfdfd047f8600c2c32557e9d05ddc6f0"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1763211600000",
+      "collected_at": "2026-10-08T01:35:04.295709+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\048.json",
+      "sha256": "46e89ee5d7a3c778d0098143570f37af79e223a669ed1f2d415a9312024ae9b6"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1763211600000",
+      "collected_at": "2026-10-08T01:35:04.974438+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\049.json",
+      "sha256": "5c6dbd728a8239f0022485c96cc60d8348cf835f31d5315236d322ec1895ee3f"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1765803600000",
+      "collected_at": "2026-10-08T01:35:05.599415+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\050.json",
+      "sha256": "a4950a68195a19594720c63f232bb1f23623d6bb4c3572ba1dd26f2c541b848f"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1765803600000",
+      "collected_at": "2026-10-08T01:35:06.194223+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\051.json",
+      "sha256": "110b35136eea23ea6d80d0c1c1dd0f133665f4b59e50f87ccb3043f97cf99433"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1768482000000",
+      "collected_at": "2026-10-08T01:35:06.772779+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\052.json",
+      "sha256": "c64319ec309b8dc54a57d93cce9105055e46b16372d5ad5cbade4607ceb00c52"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1768482000000",
+      "collected_at": "2026-10-08T01:35:07.354629+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\053.json",
+      "sha256": "9712fb11339930e8e8cf0c9a2007343434907e82855bf79d1c1823376a4b5664"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1771160400000",
+      "collected_at": "2026-10-08T01:35:07.938620+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\054.json",
+      "sha256": "7e37a214303c330ace7f8d38a56a3ad292428e84c189cf9154acdfc2d1830f11"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1771160400000",
+      "collected_at": "2026-10-08T01:35:08.524558+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\055.json",
+      "sha256": "acf505b727d3de6b104f73a6d4986fd5a20c095731f78233e66ee7623ec11b8e"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1773579600000",
+      "collected_at": "2026-10-08T01:35:09.120906+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\056.json",
+      "sha256": "ab7d3f7ed4ecb6b12c58bf575bfba95331f424425a810160ca83e370ffcd6f76"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1773579600000",
+      "collected_at": "2026-10-08T01:35:09.805918+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\057.json",
+      "sha256": "20ceefa6fa02ed677969217971e7975332d645220278cacef7af40d546fc6ad5"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1776258000000",
+      "collected_at": "2026-10-08T01:35:10.415412+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\058.json",
+      "sha256": "64780242140fb57571a7e419d95d90483ed2b19a53a540f110e8d717597ac761"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1776258000000",
+      "collected_at": "2026-10-08T01:35:11.012035+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\059.json",
+      "sha256": "422b8abb2065aa22fbac536fea6cce7a5ccf7da56a9be58dd9e2675c852583b0"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1778850000000",
+      "collected_at": "2026-10-08T01:35:11.624256+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\060.json",
+      "sha256": "2e45a7a702bd0c0a495d11f61467080004658388b6f1b1acfa7fb634b84eaeb2"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1778850000000",
+      "collected_at": "2026-10-08T01:35:12.263262+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\061.json",
+      "sha256": "9d4be0638f7d7ef5b8680128d3f3478e39d5e71800468c77d32603078f11f19d"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1781528400000",
+      "collected_at": "2026-10-08T01:35:12.892918+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\062.json",
+      "sha256": "b9c5199748f86f0e1841ffd88e6e26da3a371e61a55dfd68530ae9563e2f0215"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1781528400000",
+      "collected_at": "2026-10-08T01:35:13.537066+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\063.json",
+      "sha256": "bde291566ab48e4e86ece9db7a0827816efd11447d9aa7987ba4484a88ddf28f"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1784120400000",
+      "collected_at": "2026-10-08T01:35:14.185068+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\064.json",
+      "sha256": "249a71d41eaac300e446ecf31e7c7c0c4eb76e6638658deeddc6f69640ec5f0c"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1784120400000",
+      "collected_at": "2026-10-08T01:35:14.781186+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\065.json",
+      "sha256": "4f136ca1236a4eeb390259b581890e00e3179357aa70ba65dc8a069bd7c449cd"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1786798800000",
+      "collected_at": "2026-10-08T01:35:15.389127+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\066.json",
+      "sha256": "57d76af94c1dbdb507f9ebc697dfe211f244a95a7e82513a06fcb47d9412e15e"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1786798800000",
+      "collected_at": "2026-10-08T01:35:16.002009+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\067.json",
+      "sha256": "65203c480b5184ab14dab7c544fb508b9173ba7395b831adbfc955503c1efd69"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1789477200000",
+      "collected_at": "2026-10-08T01:35:16.578844+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\068.json",
+      "sha256": "b9c544f92e68d7e4e17482f9eab777dd0193497fefde6a058b87d92261cb3386"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1789477200000",
+      "collected_at": "2026-10-08T01:35:17.290380+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\069.json",
+      "sha256": "919d38487c7308ed0be9d7aad29e695d5a7eae9e1b71771f6ecee5ed9e112e07"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1790812800000",
+      "collected_at": "2026-10-08T01:35:17.878696+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\070.json",
+      "sha256": "3f7ac520a12d9039e30ac9bb651322c9d2ff3b9077481b0ba80dea0931d308ea"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-mark-price-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1790812800000",
+      "collected_at": "2026-10-08T01:35:18.504824+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\071.json",
+      "sha256": "11c50f92e6293071f400e9c69fda6a2f6bdf13904fb75cf1d8fc928837ccd530"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1&after=1703149200000",
+      "collected_at": "2026-10-08T01:35:19.102468+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\072.json",
+      "sha256": "bef717221fa0a9da937c50669a37a59d57d569801ee25420e82a1a8f14e2b90e"
+    },
+    {
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202401/BTC-USDT-SWAP-fundingrates-2024-01.zip?v=1000",
+      "collected_at": "2026-10-08T01:35:19.557160+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\073.zip",
+      "sha256": "0b435b9ee300183860c5fd2b471b3eb072142c7200769ab8d6eb37da7616c88d"
+    },
+    {
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202505/BTC-USDT-SWAP-fundingrates-2025-05.zip?v=1000",
+      "collected_at": "2026-10-08T01:35:19.999179+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\074.zip",
+      "sha256": "8e14d8e10fa030e9971bd1339f2f49ff1d47cc1c94591e835f5b1ba39a3e50f7"
+    },
+    {
+      "url": "https://static.okx.com/cdn/okex/traderecords/swaprates/monthly/202609/BTC-USDT-SWAP-fundingrates-2026-09.zip?v=1000",
+      "collected_at": "2026-10-08T01:35:20.461913+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\075.zip",
+      "sha256": "ce5a600e578678a73294a316592afea9cc2a7f0702bf15d56eb0c9ee68fa5a65"
+    },
+    {
+      "url": "https://www.okx.com/api/v5/public/funding-rate-history?instId=BTC-USDT-SWAP&limit=400",
+      "collected_at": "2026-10-08T01:35:20.929198+00:00",
+      "path": "D:\\file\\Kronos-master\\research\\data\\integrity_checks\\20261008_remote_samples\\076.json",
+      "sha256": "d8e4b54538c55110b0efbc959fca4b25205c820957d407e4ffa3b2467d68e6e2"
+    }
+  ],
+  "scope": "independent_refetch_samples_same_official_publisher_not_second_exchange_source"
+}
