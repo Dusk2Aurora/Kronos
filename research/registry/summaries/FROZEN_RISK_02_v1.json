@@ -1,0 +1,27 @@
+{
+  "experiment_id": "FROZEN_RISK_02_v1",
+  "stage": "frozen_risk_development",
+  "status": "complete_finite_research_and_verified_pdf",
+  "created_at_utc": "2026-10-08T09:24:48.648590+00:00",
+  "protocol_path": "D:\\file\\Kronos-master\\research\\configs\\frozen_risk_02_v1.yaml",
+  "protocol_sha256": "bc488c5bb9a3296340595e367c1c474d64f96c45e49c5249efc9f12a52d06425",
+  "result": {
+    "engineering_status": "PASS",
+    "main_status": "INCONCLUSIVE",
+    "pretraining_evidence_chinese": "支持",
+    "research_recommendation_chinese": "尚需独立验证",
+    "test_opportunities": 1091,
+    "scientific_limits": [
+      "already_seen_exploratory_development",
+      "checkpoint_training_cutoff_unproven",
+      "OHLC_first_last_trade_prices_not_exact_boundary_ticks",
+      "published_data_not_exchange_ledger_or_historical_first_availability",
+      "risk_prediction_not_direction_alpha_or_positive_strategy_expectation"
+    ]
+  },
+  "local_registry": {
+    "path": "research/registry/FROZEN_RISK_02_v1.json",
+    "sha256": "bb8c660a7b83ae0dd5b4ed8e52453f0a7f0943a7dbd3ef5fb0630227c383a41f",
+    "availability": "Preserved locally; not distributed with Git. This summary does not replace the full registry."
+  }
+}

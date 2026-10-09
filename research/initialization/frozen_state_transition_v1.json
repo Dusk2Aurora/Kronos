@@ -1,0 +1,18 @@
+{
+  "at_utc": "2026-10-08T04:10:16.962749+00:00",
+  "authorization": "user_request_based_on_HANDOFF_FROZEN_REPRESENTATION_and_roadmap",
+  "from": "ready_to_encode",
+  "to": "frozen_development",
+  "before_sha256": {
+    "research/configs/initial_experiment.yaml": "36bb829e09aadc9f445fea74989f04adfc1929b9fbfa2c1f54a7875cf04f9788",
+    "research/initialization/TODO.md": "2ec4b4339207fe1c2cd3734fe3308ccc27612ee3e9f86a8855cde5065defe0d6",
+    "AGENTS.md": "64bd7038c36a9113bac10e4495ed5e0c7561c20a9dd43e94249b16b3230f53a1",
+    "research/README.md": "ab212fa1542b5bce40ba259f943f4901cc478d13f7c0aa3804eb0b31f400b1c4",
+    "research/baselines/E00_baseline_roles.md": "e9dfd76dfa31e2fca67132d88455fe20dc1a410cc5c7b04f1d4a9d5eb271e18f"
+  },
+  "prior_bytes": "D:\\file\\Kronos-master\\research\\runs\\FROZEN_20261008_v1\\provenance\\prior_stage",
+  "protocol_sha256": "f6e2e21863c5687a4129be750c1c16c17d9b3f647d7648006dd7006fcd1639d4",
+  "after_config_sha256": "4c48c2b8de5229070336312bb4d67b8bd01343626c29f8f26ca4f2eb7822ae0c",
+  "final_holdout_opened": false,
+  "M0_report_unchanged_sha256": "6072aecc3480876bdfcd41c43c59aeae488de618ad444bee1614f2b444196099"
+}

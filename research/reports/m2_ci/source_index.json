@@ -1,0 +1,20 @@
+{
+  "copied_without_modification": true,
+  "reports": [
+    {
+      "path": "research/reports/m2_ci/M2_Conditional_Increment_Development_Report.md",
+      "source_path": "research/runs/M2_CONDITIONAL_INCREMENT_01/reports/M2_Conditional_Increment_Development_Report.md",
+      "sha256": "73de234a9a29434f6c5a480772dd66c5fdee1307215a4c935e99c2944f00c769"
+    },
+    {
+      "path": "research/reports/m2_ci/M2_Conditional_Increment_Future_Holdout_Protocol_DRAFT.md",
+      "source_path": "research/runs/M2_CONDITIONAL_INCREMENT_01/reports/M2_Conditional_Increment_Future_Holdout_Protocol_DRAFT.md",
+      "sha256": "401e28fd7c29fa22b78060ea5a804db1dc6274e80ca3312ea2dadeb46fff5afb"
+    },
+    {
+      "path": "research/reports/m2_ci/M2_Conditional_Increment_Project_Decision.md",
+      "source_path": "research/runs/M2_CONDITIONAL_INCREMENT_01/reports/M2_Conditional_Increment_Project_Decision.md",
+      "sha256": "43557e0604822f50c6126fe4d2e3ab33eb67beb433d0ad9d9ab5586f3ed3e6ba"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "experiment_id": "FROZEN_RISK_03_v1",
+  "parent_experiment_id": "FROZEN_RISK_02_v1",
+  "stage": "frozen_risk_independent_validation",
+  "status": "completed_formal_experiment",
+  "created_at_utc": "2026-10-08T11:32:22.759370+00:00",
+  "completed_at_utc": "2026-10-08T14:36:59.987593+00:00",
+  "hypothesis": {
+    "H1": "R2 improves surprise-event AUROC over R1 on the reserved independent interval",
+    "H2": "R2 improves surprise-event AUROC over nonlinear ordinary-only B2",
+    "H3": "audit absolute RV magnitude/underestimation independently of ranking"
+  },
+  "baseline_id": "R1_and_B2_coprimary",
+  "only_primary_change": "independent_surprise_ranking_target_plus_fixed33feature_LightGBM_Gamma_control",
+  "protocol_path": "D:\\file\\Kronos-master\\research\\configs\\frozen_risk_03_v1.yaml",
+  "protocol_sha256": "7ed8affd7cd624cde89d23d29aaca7ef2ab660167fac7d3dc25fac274e394b7f",
+  "holdout_status": "CONSUMED",
+  "result": {
+    "engineering_status": "PASS",
+    "main_status": "CONFIRMED_RANKING_INCREMENT",
+    "conclusion": "CONFIRMED_RANKING_INCREMENT",
+    "checkpoint_specific_training_cutoff_proven": false,
+    "risk_magnitude_red_flag": false,
+    "co_primary": {
+      "R2_minus_B2": {
+        "ci_lower": 0.08055074443477203,
+        "ci_upper": 0.15746932156245688,
+        "mean_delta": 0.12224537184661494,
+        "quarter_deltas": [
+          0.12570754716981125,
+          0.11878319652341862
+        ]
+      },
+      "R2_minus_R1": {
+        "ci_lower": 0.06521915698995466,
+        "ci_upper": 0.13451695777665076,
+        "mean_delta": 0.10031376313815521,
+        "quarter_deltas": [
+          0.08844339622641506,
+          0.11218413004989536
+        ]
+      }
+    },
+    "quarter_samples": [
+      {
+        "quarter": "TEST_Q2",
+        "N": 272,
+        "positive": 60,
+        "negative": 212
+      },
+      {
+        "quarter": "TEST_Q3",
+        "N": 275,
+        "positive": 57,
+        "negative": 218
+      }
+    ]
+  },
+  "local_registry": {
+    "path": "research/registry/FROZEN_RISK_03_v1.json",
+    "sha256": "825fe4fe514612d321c813544e324f4f959130aa338898ed15e58e1acdb0204c",
+    "availability": "Preserved locally; not distributed with Git. This summary does not replace the full registry."
+  }
+}

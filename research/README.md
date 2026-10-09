@@ -1,14 +1,20 @@
 # Kronos Crypto 研究工作区
 
-研究 OKX BTC-USDT 永续上，Kronos 是否为固定动量策略的参与／跳过提供增量信息。回测使用独立 Freqtrade 官方引擎。路线图见 [Word](Kronos_Crypto_Research_Roadmap.docx)；当前阶段及下一步以 [TODO](initialization/TODO.md) 和 [配置](configs/initial_experiment.yaml) 为准。
+研究 OKX BTC-USDT 永续上，Kronos 是否为固定动量策略的参与／跳过提供增量信息。回测使用独立 Freqtrade 官方引擎。路线图见 [Word](Kronos_Crypto_Research_Roadmap.docx)；当前冻结阶段及下一步以 [冻结 TODO](frozen/TODO.md) 和 [配置](configs/initial_experiment.yaml) 为准。[初始化 TODO](initialization/TODO.md) 保留 M0 与交接前基线记录。
 
 ## 当前入口
 
-M0 工程准备已验收，E00 和 E00R 开发期基线已完成。下一步是锁定 E00R／E01R／E02R 共用比较协议；冻结表征提取仍禁用，最终 holdout 未评估。普通基线尚未建立稳定信息优势或优于现金的盈利价值。
+M0 工程准备已验收，E00 和 E00R 开发期基线已完成。E00R／E01R／E02R 共用比较协议已锁定；开发期冻结历史编码、下游 Ridge 与官方回放已完成，结果见 [冻结实验报告](initialization/FROZEN_results.md)，最终 holdout 仍封存。普通基线尚未建立稳定信息优势或优于现金的盈利价值。
+
+第一项冻结表征有限研究与综合结论已完成，当前配置状态为 `first_frozen_experiment_completed_holdout_sealed`，无待运行正式实验，等待用户验收。交付见[完整开发期结论](frozen/FIRST_EXPERIMENT_CONCLUSION.md)、[综合manifest与hash](runs/FIRST_FROZEN_SYNTHESIS_20261008_v1/manifest.json)及[全部筛选](runs/FIRST_FROZEN_SYNTHESIS_20261008_v1/all_screens.json)。首轮Ridge、[有限MLP](runs/FROZEN_MLP_20261008_v2/results.md)、[同坐标量化](runs/QUANT_20261008_v1/results.md)合计276次新增正式拟合与352份新增官方导出，保留[512条官方曲线CSV](runs/QUANT_20261008_v1/presentation/official_curves.csv)。
+
+信息、经济和量化可读性筛选均未通过，停止当前BTC单资产、1h历史、4h固定动量参与任务上的预测头扩容及冻结表征路线扩展。量化主rank50相对普通19项在至少3/4折少亏，匹配参与数量诊断也有正向信号，均完整保留；但未建立预测增量、充分配对证据或优于现金的盈利，不能据此宣称量化瓶颈。MLP v1拟合前失败为0次正式拟合，图表预检及seed派生历史保留。最终holdout、骨干／tokenizer训练／微调、生成、push和实盘仍禁用。
 
 | 内容 | 入口 |
 | --- | --- |
-| 下一步与验收索引 | [初始化 TODO](initialization/TODO.md) |
+| 冻结阶段进度、验收与下一步 | [冻结 TODO](frozen/TODO.md) |
+| 第一项实验完整结论、图表与停止依据 | [完整开发期结论](frozen/FIRST_EXPERIMENT_CONCLUSION.md)、[季度预测损失图](runs/FIRST_FROZEN_SYNTHESIS_20261008_v1/prediction_loss_by_quarter.png) |
+| 初始化验收与交接前基线记录 | [初始化 TODO](initialization/TODO.md) |
 | 市场、时序、成本、切分、阶段 | [首轮配置](configs/initial_experiment.yaml) |
 | Ridge、19项特征及13项消融、门控设计 | [独立 E00R 配置](configs/baseline_revision_v2.yaml) |
 | 多项基线的定位 | [基线角色](baselines/E00_baseline_roles.md) |
@@ -18,7 +24,7 @@ M0 工程准备已验收，E00 和 E00R 开发期基线已完成。下一步是�
 | 数据字段与单位 | [数据契约](data_contracts/okx_usdt_perp.yaml) |
 | 实验版本与尝试记录 | [登记目录](registry/) |
 
-`initial_experiment.yaml` 中的 `first_round_head` 记录原 E00 logistic；E00R 的 Ridge 设计在独立配置中。当前协议尚未锁定，不把原 E00 参数自动沿用到 E01R／E02R。
+`initial_experiment.yaml` 中的 `first_round_head` 记录原 E00 logistic；E00R 的 Ridge 设计在独立配置中。共用协议见 [冻结比较配置](configs/frozen_comparison_v1.yaml)，保留原 E00 与 E00R 证据。
 
 ## 表征与生成的研究边界
 
@@ -30,10 +36,10 @@ M0 工程准备已验收，E00 和 E00R 开发期基线已完成。下一步是�
 
 - `baselines/`、`scripts/`、`freqtrade/` 保存研究实现与有效核验入口。`verify_*` 是因果、交易账本或验收检查，按需要执行，不作为每次工作的默认全量测试。
 - 上游 `tests/test_kronos_regression.py` 的4项模型回归保留；已有环境验收记录其通过，未因工作区整理重跑模型。
-- `initialization/` 中的审计、旧 E00、原决策起点报告及复核 JSON 是历史证据，可能已被 registry 的来源 hash 引用，保留原路径和内容。当前状态读 TODO／配置，历史报告不代表当前阶段。
+- `initialization/` 中的审计、旧 E00、原决策起点报告及复核 JSON 是历史证据，可能已被 registry 的来源 hash 引用，保留原路径和内容。冻结结果报告也保留原路径；当前状态读 `frozen/TODO.md`／配置，历史报告不代表当前阶段。
 - `.gitattributes` 保留研究文件原始字节，包括 LF／CRLF，避免 Git 自动转换换行使已记录的 SHA256 校验失效；跨机器读取时仍使用 UTF-8（个别历史源码带 BOM）。
 - `data/`、`runs/`、`.venv`、权重缓存与外部 Freqtrade 运行副本不提交。仅克隆此仓库不能取得本机数据、模型和完整运行工件；复现需按 manifest 与依赖锁准备对应来源。
-- 当前时间折线图见本机 `runs/baseline_time_series_20261008_v3/`，含 PNG／SVG、CSV 数值底表和核验报告；各季度独立重置、只反映已平仓权益。
+- 原基线时间折线图保留在本机 `runs/baseline_time_series_20261008_v3/`；完整新旧对照见[量化图表核验](runs/QUANT_20261008_v1/presentation/report.json)，含512条官方曲线的PNG／SVG与CSV。各季度独立重置，只反映已平仓权益，不代表持仓无浮动风险或连续年度复利。
 - 被替代的绘图 v1（失败记录）与 v2（无端点标记版）压缩保存在本机 `runs/archive/`，目录树与原文件字节保留。需要历史版本时先解压到 `runs/`；当前 v3 不依赖这两个目录。
 
 清理仅移除可重建缓存，并归档被替代的绘图输出；数据快照、标签、原始回测、实验尝试与失败证据保留。

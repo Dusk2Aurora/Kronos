@@ -1,11 +1,12 @@
 # Kronos 研究初始化清单
 
-M0 工程准备已验收，当前 `ready_to_encode=true`。冻结 tokenizer／骨干的推理、表征提取及训练仍禁用，最终 holdout 封存。阶段以 [配置](../configs/initial_experiment.yaml) 为准；目录入口见 [研究 README](../README.md)。
+本清单保留 M0 初始化验收及交接前的基线记录；M0 已验收，`ready_to_encode=true`。冻结阶段的进度、验收和下一步统一维护于 [冻结 TODO](../frozen/TODO.md)。当前阶段以 [配置](../configs/initial_experiment.yaml) 为准；目录入口见 [研究 README](../README.md)。
 
-## 当前待办
+## 初始化完成与交接
 
-- [ ] **冻结表征前：锁定共用协议。** 固定 E00R／E01R／E02R 相同目标、19项普通特征、Ridge 预测头及选择预算；保留13项消融、旧 logistic、固定规则与无信息参与对照。普通基线不要求先盈利，不把少亏或减少暴露当作信息增量。
-- [ ] **协议锁定后：明确下一阶段范围。** 按路线图第5章准备历史隐藏表征，使用 `decode_s1()` 的最后有效历史 context；原生多路径生成属于另行登记的研究线。当前尚未开始冻结提取。
+- [x] M0 初始化验收完成，证据索引见下表。
+- [x] E00／E00R 基线和因果复核完成，历史结果及原路径保留。
+- [x] 交接冻结阶段；后续共用协议、编码、读出器、官方回放及研究决策见 [冻结 TODO](../frozen/TODO.md)。
 
 ## 已验收步骤与证据
 
@@ -40,3 +41,5 @@ M0 工程准备已验收，当前 `ready_to_encode=true`。冻结 tokenizer／�
 - [图表核验报告](../runs/baseline_time_series_20261008_v3/report.json)：160条官方闭仓权益曲线＋16条派生均值，配SVG和CSV底表；各季度独立重置，不代表小时盯市。未新增训练／回测或读取holdout。
 
 旧绘图v1／v2已压缩归档到本机 `research/runs/archive/`。历史审计、旧基线与失败证据保留；依赖缓存清理不改变已验收结论。
+
+冻结阶段结果报告仍保留在 [原路径](FROZEN_results.md)，其当前进度和待办见 [独立冻结 TODO](../frozen/TODO.md)。

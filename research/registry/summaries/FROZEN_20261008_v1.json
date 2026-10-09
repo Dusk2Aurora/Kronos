@@ -1,0 +1,72 @@
+{
+  "experiment_id": "FROZEN_20261008_v1",
+  "parent_experiment_id": "E00R_20261008_phase4_v1",
+  "stage": "frozen_development",
+  "status": "completed_exploratory_development",
+  "created_at_utc": "2026-10-08T04:10:16.924246+00:00",
+  "completed_at_utc": "2026-10-08T04:25:54.927919+00:00",
+  "hypothesis": "Frozen pretrained history may add readable net-return information beyond ordinary19 and random backbone controls",
+  "baseline_id": "E00R_ridge19",
+  "only_primary_change": "add_pretrained_or_random_512_context_same_Ridge_budget",
+  "configuration": {
+    "path": "D:\\file\\Kronos-master\\research\\configs\\frozen_comparison_v1.yaml",
+    "sha256": "f6e2e21863c5687a4129be750c1c16c17d9b3f647d7648006dd7006fcd1639d4"
+  },
+  "final_holdout_inspected": false,
+  "result": {
+    "status": "completed_exploratory_development_analysis",
+    "information_screen": {
+      "checks": {
+        "median_relative_MSE_vs_ordinary_ge_1pct": false,
+        "median_relative_MSE_vs_random_seed_mean_ge_1pct": true,
+        "positive_prediction_improvement_folds_ge_3": false,
+        "median_matched_selection_lift_ge_1bps": true,
+        "positive_matched_lift_folds_ge_3": true,
+        "paired_primary_95_lower_positive_all_comparators": false,
+        "positive_paired_utility_folds_ge_3_all_comparators": false
+      },
+      "passed": false
+    },
+    "economic_screens": {
+      "rank50": {
+        "checks": {
+          "positive_base_increment_folds_ge_3": false,
+          "median_base_increment_ge_1pp": true,
+          "positive_base_quarters_vs_cash_ge_3": false,
+          "stress_median_return_positive": false,
+          "stress_median_increment_positive": false,
+          "median_closed_drawdown_not_worse": false
+        },
+        "passed": false
+      },
+      "economic": {
+        "checks": {
+          "positive_base_increment_folds_ge_3": false,
+          "median_base_increment_ge_1pp": false,
+          "positive_base_quarters_vs_cash_ge_3": false,
+          "stress_median_return_positive": false,
+          "stress_median_increment_positive": false,
+          "median_closed_drawdown_not_worse": false
+        },
+        "passed": false
+      }
+    },
+    "conclusion": "insufficient_evidence",
+    "automatic_promotion": false,
+    "final_holdout_inspected": false,
+    "backbone_or_tokenizer_trained": false,
+    "limitations": [
+      "Development folds previously seen; exploratory historical research.",
+      "Checkpoint training cutoff unproven; no strict ex-ante OOS claim.",
+      "Paired intervals apply to independent reference utility or prediction loss, never compounded portfolio return.",
+      "Stationary bootstrap assumes approximate within-fold stationarity; 7-day blocks leave about 13 effective blocks per quarter.",
+      "E02R preserves pretrained tokenizer; only backbone pretraining is removed.",
+      "Closed-trade equity excludes unrealized intrahour exposure risk; fee proxy does not simulate price impact."
+    ]
+  },
+  "local_registry": {
+    "path": "research/registry/FROZEN_20261008_v1.json",
+    "sha256": "9954d0dceebaba17bcec514aecfafad92ad47a724196b4434943686b7c916717",
+    "availability": "Preserved locally; not distributed with Git. This summary does not replace the full registry."
+  }
+}

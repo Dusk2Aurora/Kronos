@@ -1,0 +1,24 @@
+{
+  "experiment_id": "FROZEN_MLP_20261008_v1",
+  "parent_experiment_id": "FROZEN_20261008_v1",
+  "stage": "frozen_development",
+  "status": "failed_preparation",
+  "created_at_utc": "2026-10-08T04:43:54.531777+00:00",
+  "hypothesis": "A bounded nonlinear readout may use frozen historical information not accessible to Ridge, beyond a matched ordinary nonlinear head and random backbone controls",
+  "baseline_id": "E00M_mlp19",
+  "only_primary_change": "replace_Ridge_with_fixed_small_nonlinear_readout_and_identical_three_head_ensemble_budget_in_all_groups",
+  "configuration": {
+    "path": "D:\\file\\Kronos-master\\research\\configs\\frozen_mlp_v1.yaml",
+    "sha256": "7482f53d1eb9bb88097989c6e5063140d3807d199212485553f99eebe950a706"
+  },
+  "final_holdout_inspected": false,
+  "result": {
+    "conclusion": "invalid_due_to_audit",
+    "failure_reason": "ValueError('Both positional indices must be integers')"
+  },
+  "local_registry": {
+    "path": "research/registry/FROZEN_MLP_20261008_v1.json",
+    "sha256": "1183c8dcda3bbd602a0d7039babab054d80871ef8a19f0de95c76d8a83bbf316",
+    "availability": "Preserved locally; not distributed with Git. This summary does not replace the full registry."
+  }
+}

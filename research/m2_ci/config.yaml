@@ -1,0 +1,176 @@
+schema_version: 1
+experiment_id: M2_CONDITIONAL_INCREMENT_01
+stage: conditional_increment_development_only
+status: preregistered_before_new_fitting
+evidence_class: DEVELOPMENT_OOF_WITH_REUSED_ARCHITECTURE_NOT_INDEPENDENT_CONFIRMATION
+authority:
+  user_request: new isolated M2-CI experiment and long goal
+  development_screen_answer: 采用建议口径
+  future_formal_test_approved: false
+  no_push: true
+sources:
+  parent_03: research/runs/FROZEN_RISK_03_v1
+  parent_03_1: research/runs/FROZEN_RISK_03_1_B5_v1
+  original_03_manifest_sha256: e17ed339eb054ea8bd620a52600746f9d3474c0e57266c0db8442e17378b139e
+  original_03_1_manifest_sha256: 23f4eba2a470ddb484019b64fbe546b34316a62b2439dfe28938c66f82f26b7c
+  original_state_revision: 15
+  original_state_sha256: 6cfe6532d9078e68e91ae62e8a50cb2549d9bea1a38006bcbb2d813f77b55058
+  development_only_max_time_exclusive: '2026-04-01T00:00:00Z'
+  hourly_snapshot: research/data/snapshots/20261008T011408835523Z_7bb06df6f064
+  development_5m: research/runs/FROZEN_RISK_02_v1/data_5m
+  pretrained_development_cache: research/runs/FROZEN_RISK_03_v1/features/pretrained_v2.npz
+  no_mixed_B5_input_array_reads: true
+  no_Q2_Q3_value_reads_for_new_analysis: true
+roles:
+  train_start: '2024-01-01T00:00:00Z'
+  original_train_end: '2026-03-01T00:00:00Z'
+  original_validation_end: '2026-04-01T00:00:00Z'
+  oof_fold_count: 5
+  minimum_fit_rows: 800
+  minimum_inner_validation_rows: 170
+  minimum_evaluation_rows: 170
+  folds:
+  - id: WF01
+    fit_end: '2024-10-01T00:00:00Z'
+    evaluation_start: '2025-01-01T00:00:00Z'
+    evaluation_end: '2025-04-01T00:00:00Z'
+    expected_counts: [821, 275, 269]
+  - id: WF02
+    fit_end: '2025-01-01T00:00:00Z'
+    evaluation_start: '2025-04-01T00:00:00Z'
+    evaluation_end: '2025-07-01T00:00:00Z'
+    expected_counts: [1097, 269, 272]
+  - id: WF03
+    fit_end: '2025-04-01T00:00:00Z'
+    evaluation_start: '2025-07-01T00:00:00Z'
+    evaluation_end: '2025-10-01T00:00:00Z'
+    expected_counts: [1367, 272, 275]
+  - id: WF04
+    fit_end: '2025-07-01T00:00:00Z'
+    evaluation_start: '2025-10-01T00:00:00Z'
+    evaluation_end: '2026-01-01T00:00:00Z'
+    expected_counts: [1640, 275, 275]
+  - id: WF05
+    fit_end: '2025-10-01T00:00:00Z'
+    evaluation_start: '2026-01-01T00:00:00Z'
+    evaluation_end: '2026-03-01T00:00:00Z'
+    expected_counts: [1916, 275, 176]
+  inner_validation: '[fit_end, evaluation_start), purged before evaluation_start'
+  fit: '[2024-01-01, fit_end), strictly purged at fit_end'
+  evaluation: '[evaluation_start, evaluation_end), strictly purged at evaluation_end'
+  refit_after_inner_selection: false
+  original_VALID: reuse original frozen TRAIN models; no new fitting or weight selection
+  early_historical_oof_limitation: architecture selected using March2026 VALID; checkpoint training cutoff unproven
+timing:
+  decision_hours_utc: [4, 12, 20]
+  availability_delay_seconds: 60
+  entry_after_boundary_hours: 1
+  horizon_hours: 4
+  lookback_1h_bars: 256
+  purge: label_end AND labelable_at strictly before each role end
+  inference_interface: prediction-only inputs and metadata; no RV or event fields
+label:
+  name: RV_raw
+  definition: entry5m_open plus48completed5m_closes; sum48squared_natural_log_returns
+  epsilon: 1.0e-12
+  effective: max(RV_raw,epsilon)
+  prediction_clip: [1.0e-12, 1.0]
+  new_labels: forbidden
+features:
+  ordinary_count: 33
+  pretrained_hidden_count: 512
+  R0_in_fitted_features: false
+  normalization: historical_window_float64_mean_popstd_plus1e-5_clip5_then_float32
+  calendar_divisors: [59, 23, 6, 31, 12]
+  TCN_ordinary_scaler: StandardScaler_fit_fold_fit_rows_only
+models:
+  linear_families: [har, R1, R2]
+  linear_lambda_candidates: [0.001, 0.01, 0.1, 1.0]
+  linear_implementation: unchanged experiment_03.models fit_head/predict_head
+  B2_structures: [[7, 30], [7, 60], [15, 30], [15, 60]]
+  B2_implementation: unchanged experiment_03.models fit_b2/predict_b2
+  B5_implementation: unchanged experiment_03_1.b5_model
+  B5_width: 32
+  B5_weight_decay: 0.001
+  B5_seeds: [17, 29, 43]
+  B5_max_epochs: 120
+  B5_patience: 15
+  B5_batch_size: 64
+  B5_learning_rate: 0.001
+  B5_device: cuda
+  B5_ensemble: arithmetic mean of3original-unit RV predictions
+  B5_structure_search: forbidden
+  constant_RV: clipped arithmetic mean of effective labels in fold fit rows; originalTRAIN mean forVALID
+budget:
+  linear_fits: 60
+  B2_fits: 20
+  B5_fits: 15
+  total_fits: 95
+  B5_max_total_epochs: 1800
+  B2_max_total_iterations: 6000
+  deterministic_refits: 0
+  retry_or_expansion: no automatic retries; preserve journal, claim and failed fits
+fusion:
+  comparators: [R1, B2, R2]
+  alpha_candidates: [0.0, 0.1, 0.25, 0.5, 0.75, 1.0]
+  equation: (1-alpha)*B5_RV + alpha*comparator_RV
+  candidate_count_per_comparator: 6
+  selection: lowest opportunity-weighted mean original-unit QLIKE on all1267OOF rows
+  tie_break: exact ties lower alpha
+  selection_before_original_VALID_check: true
+  no_VALID_weight_reselection: true
+  no_calibrator_or_latent_fusion: true
+primary:
+  statistic: opportunity-weighted mean QLIKE_B5_minus_QLIKE_mix
+  regret_difference_is_same_statistic: true
+  raw_QLIKE_percentage: forbidden
+  minimum_relative_mean_Regret_improvement: 0.05
+  minimum_positive_OOF_folds: 4
+  original_VALID_gain_required: strictly_positive
+  paired_7day_CI_lower_required: strictly_positive
+  specificity: selectedR2mix must have strictly positive paired7dayCI lower versus EACH selectedR1mix andB2mix
+  interpretation: all results including selected-alpha intervals are developmental, selection-conditioned and potentially optimistic
+bootstrap:
+  method: circular_stationary
+  stratification: each of5OOFfolds separately; originalVALID separately
+  unit: fullUTCdecision_day; keepemptydays
+  blocks: [7, 3, 14]
+  iterations: 5000
+  base_seed: 20261009
+  stream_rule: base_seed+block_days*1000+fold_index; index0..4 OOF, index5 VALID
+  paired: allmodelsandcandidates useidenticaldaysandweights
+  CI: jointvalidpercentile95%; no redrawing
+  selection_repeated_in_draws: false; explicitly report conditional selection bias
+auxiliary:
+  metrics: [logRV_MSE, surprise_AUROC, surprise_AP, absolute_q90_AUROC, absolute_q90_AP]
+  event: log((RV_raw+epsilon)/(sameEWMA+epsilon))>log2
+  score: log((prediction+epsilon)/(sameEWMA+epsilon))
+  thresholds: per-fold FIT effectiveRV q90/q99 andFIT EWMA quartiles; originalTRAIN thresholds forVALID
+  low_estimate: prediction/effectiveRV<0.5
+  concentration: saved UTCdaily signed loss gains; max1day/max7day; drop_top1_positive_day diagnostic without refitting/reselection
+  resources: actual allcandidate walltime/parameters/checkpoint sizes/memory; common8DEVwindows3warmups20repetitions forselectedsingle/ensemble/R2encoder/heads/fullfusion
+decision_rules:
+  alpha0_or_nonpositive_gain: NO_DEVELOPMENT_INCREMENT
+  confident_nonpositive_gain_or_positive_folds_le2_and_VALID_nonpositive: NO_DEVELOPMENT_INCREMENT
+  full_primary_screen_and_specificity: CANDIDATE_INCREMENT_NOT_CONFIRMED
+  full_primary_screen_but_any_cheap_mix_also_passes_primary_and_specificity_not_proven: NON_SPECIFIC_ENSEMBLE_GAIN
+  remaining_uncertainty_or_inadequate_stability_or_precision: INCONCLUSIVE
+  non_specific_is_not_equivalence_proof: true
+future_draft:
+  approved: false
+  first_test_decision: strictly after future approved protocol seal timestamp plus required warmupavailability
+  never_reuse_consumed_Q2_Q3: true
+  effect_threshold_candidate: 5%relativeRegret; futureapprovalneeded
+  sample_length_grid_months: [3, 6, 9, 12, 18, 24]
+  planning_power: 0.8
+  interpretation: developmentpairedblockSE andnormalapproximation; scenarioonly, not established futurestationarity
+  run_formal_or_collect_live_now: false
+prohibited:
+- originalacceptedartifactwrites
+- Q2_Q3_training_selection_promotion
+- backbone_tokenizer_training_or_finetuning
+- extraarchitecture_grid_or_latent_heads
+- newrisk_or_return_labels
+- formal_future_test_without_later_explicit_approval
+- economic_trading_search_or_live_deployment
+- git_push

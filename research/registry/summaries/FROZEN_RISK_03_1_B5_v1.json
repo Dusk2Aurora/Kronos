@@ -1,0 +1,42 @@
+{
+  "experiment_id": "FROZEN_RISK_03_1_B5_v1",
+  "parent_experiment_id": "FROZEN_RISK_03_v1",
+  "stage": "post_hoc_B5_supplement",
+  "status": "completed_post_hoc_B5_supplement",
+  "created_at_utc": "2026-10-08T15:26:51.851822+00:00",
+  "completed_at_utc": "2026-10-09T00:09:55.348218+00:00",
+  "hypothesis": "Audit whether finite inexpensive sequence model B5 covers the frozen Kronos risk-ranking advantage; exploratory supplement after prior test exposure",
+  "baseline_id": "roadmap_B5_small_sequence_model",
+  "only_primary_change": "add inexpensive causalTCN directly learning historicalsequence; parent predictors retained",
+  "configuration": {
+    "path": "research/configs/frozen_risk_03_1_b5_v1.yaml",
+    "sha256": "4636e4f7cc5db9ab3a9e425b518c5f2674322a8d67293bed1ab358e8cd96741c"
+  },
+  "protocol_sha256": "4636e4f7cc5db9ab3a9e425b518c5f2674322a8d67293bed1ab358e8cd96741c",
+  "evidence_class": "POST_HOC_EXPLORATORY_NOT_NEW_INDEPENDENT_CONFIRMATION",
+  "holdout_status": "CONSUMED",
+  "result": {
+    "conclusion": "POST_HOC_B5_SUPPLEMENT",
+    "original_primary_status_unchanged": "CONFIRMED_RANKING_INCREMENT",
+    "R2_minus_B5": {
+      "quarter_deltas": [
+        -0.0993710691823898,
+        -0.05496539513922416
+      ],
+      "mean_delta": -0.07716823216080698,
+      "ci_lower": -0.10285115616977286,
+      "ci_upper": -0.05158251968261271,
+      "valid_draws": 5000,
+      "invalid_fraction": 0.0
+    },
+    "no_new_confirmatory_conclusion": true,
+    "candidate_fits": 12,
+    "fit_attempts_including_user_interruption": 13,
+    "interrupted_attempts": 1
+  },
+  "local_registry": {
+    "path": "research/registry/FROZEN_RISK_03_1_B5_v1.json",
+    "sha256": "05caf0bf6e691aa19b6d1eb5261926769bafc3c5ab586a333a78abd842e19fac",
+    "availability": "Preserved locally; not distributed with Git. This summary does not replace the full registry."
+  }
+}

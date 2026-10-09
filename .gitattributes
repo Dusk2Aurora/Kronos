@@ -1,2 +1,5 @@
 # Preserve research source/evidence bytes used by SHA256 provenance records.
-/research/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/research/** -text whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+# Sealed test sources also require byte-identical checkout, including historical EOFs.
+/tests/test_m2_ci*.py -text whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+/tests/test_risk03*.py -text whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol

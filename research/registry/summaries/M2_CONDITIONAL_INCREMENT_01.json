@@ -1,0 +1,50 @@
+{
+  "experiment_id": "M2_CONDITIONAL_INCREMENT_01",
+  "parent_experiment_id": "FROZEN_RISK_03_1_B5_v1",
+  "stage": "conditional_increment_development_only",
+  "status": "completed_development_research",
+  "created_at_utc": "2026-10-09T00:40:01.778560+00:00",
+  "completed_at_utc": "2026-10-09T02:00:38.532045+00:00",
+  "hypothesis": "Conditional predictive value of existing R2 output given B5; inexpensive identical fusion controls",
+  "baseline_id": "B5_fixed_TCN_32_wd0.001_three_seed_ensemble",
+  "only_primary_change": "Causal development OOF retraining and one scalar positive-RV fusion; no new architecture",
+  "configuration": {
+    "path": "research/m2_ci/config.yaml",
+    "sha256": "0a21ccd388c9bcc5aa02e2fe2a9818f9f5b847d8513aeb2998ca753ebfa94bed"
+  },
+  "protocol_sha256": "0a21ccd388c9bcc5aa02e2fe2a9818f9f5b847d8513aeb2998ca753ebfa94bed",
+  "evidence_class": "DEVELOPMENT_OOF_WITH_REUSED_ARCHITECTURE_NOT_INDEPENDENT_CONFIRMATION",
+  "holdout_status": "CONSUMED",
+  "future_formal_test_approved": false,
+  "result": {
+    "conclusion": "INCONCLUSIVE",
+    "R2_screen": {
+      "alpha": 0.1,
+      "mean_gain": 0.001297692314220228,
+      "base_OOF_Regret": 0.3373469961444076,
+      "relative_Regret_improvement": 0.0038467581720061524,
+      "fold_gains": [
+        -0.006182997714470062,
+        0.0036367661409748564,
+        -0.006482402205781668,
+        0.010067026573443272,
+        0.007570627590107293
+      ],
+      "positive_folds": 3,
+      "VALID_gain": 0.0009726050306584355,
+      "ci_lower_7d": -0.0018368877943054475,
+      "ci_upper_7d": 0.005126387618645192,
+      "primary_screen_pass": false
+    },
+    "specificity_screen_pass": false,
+    "new_independent_confirmation": false,
+    "failed_scientific_fits": 0,
+    "failed_engineering_records_preserved": true,
+    "next_step": "已授权开发研究完成；未来独立协议为未批准草案，不执行"
+  },
+  "local_registry": {
+    "path": "research/registry/M2_CONDITIONAL_INCREMENT_01.json",
+    "sha256": "c1ba633bc49327001c0b869744c3dfa4be7c66d323415ef1b0f5faee29a97d39",
+    "availability": "Preserved locally; not distributed with Git. This summary does not replace the full registry."
+  }
+}

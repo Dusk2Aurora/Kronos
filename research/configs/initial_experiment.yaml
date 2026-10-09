@@ -1,9 +1,8 @@
-# 研究初始化记录；允许历史采集及基线准备，尚不提取 Kronos 表征。
+# First frozen experiment completed; final holdout remains sealed.
 schema_version: 1
-status: M0_accepted_ready_to_encode
-stage: ready_to_encode
+status: first_frozen_experiment_completed_holdout_sealed
+stage: frozen_development
 task_id: 9
-
 confirmed_fields:
   instrument: BTC-USDT-SWAP
   history_start: '2024-01-01T00:00:00Z'
@@ -14,13 +13,16 @@ confirmed_fields:
   holding_horizon_bars: 4
   decision_cadence_hours: 8
   decision_phase_authority: user_delegated_to_agent
-  decision_hours_utc: [4, 12, 20]
+  decision_hours_utc:
+  - 4
+  - 12
+  - 20
   task: fixed_momentum_participate_or_skip
   costs: research_assumption_fee_5bps_slippage_2bps_per_side_stress_2x
-  freqtrade_cost_proxy_per_side: [0.0007, 0.0014]
-
+  freqtrade_cost_proxy_per_side:
+  - 0.0007
+  - 0.0014
 engineering_defaults:
-  # 工程默认不是用户额外确认；正式评估前应审阅并锁定。
   instrument: BTC-USDT-SWAP
   ccxt_symbol: BTC/USDT:USDT
   instrument_rationale: perpetual_equivalent_of_original_BTC_example
@@ -29,7 +31,6 @@ engineering_defaults:
   availability_delay_basis: conservative_research_assumption_not_measured
   max_abs_position: 1.0
   leverage: 1.0
-
 market:
   exchange: okx
   instrument: BTC-USDT-SWAP
@@ -43,13 +44,15 @@ market:
   timezone: UTC
   history_start: '2024-01-01T00:00:00Z'
   history_end_exclusive: '2026-10-01T00:00:00Z'
-
 timing:
   input_bars: completed_only
   bar_timestamp_semantics: bar_open_time
   lookback_bars: 256
   decision_cadence_hours: 8
-  decision_hours_utc: [4, 12, 20]
+  decision_hours_utc:
+  - 4
+  - 12
+  - 20
   decision_phase_confirmation_pending: false
   decision_phase_basis: agent_selected_under_user_authorization_to_cross_observed_funding_settlement
   decision_cadence_basis: user_confirmed_avoid_freqtrade_same_candle_reentry_conflict
@@ -60,20 +63,28 @@ timing:
   holding_horizon_bars: 4
   exit: entry_time_plus_4_bars
   overlap_policy: nonoverlapping_labels_and_independent_reference_trades
-
 fixed_strategy:
   momentum_lookback_bars: 24
   direction_formula: sign(log(close_t / close_t_minus_24))
   direction_zero_policy: flat
-  gate_actions: [0, 1]
-  gate_meaning: [skip, participate]
+  gate_actions:
+  - 0
+  - 1
+  gate_meaning:
+  - skip
+  - participate
   allow_direction_reversal: false
   position_formula: gate_action * fixed_momentum_direction
   max_abs_position: 1.0
   leverage: 1.0
-
 data_contract:
-  model_input_fields: [open, high, low, close, volume, amount]
+  model_input_fields:
+  - open
+  - high
+  - low
+  - close
+  - volume
+  - amount
   volume:
     source_field: volCcy
     normalized_unit: base_BTC
@@ -102,7 +113,6 @@ data_contract:
     snapshot_id: 20261008T011408835523Z_7bb06df6f064
     observed_settlement_interval_hours: 8
     original_mark_join_verified: true
-
 labels_and_costs:
   label_basis: incremental_realized_net_return_of_participation_versus_skip
   classification_target: independent_reference_trade_net_return_greater_than_zero
@@ -140,13 +150,12 @@ labels_and_costs:
     E00_comparator: fixed_momentum
     E01_E02_comparator: ordinary_features_gate
     role: research_economic_screen_not_automatic_live_trading_or_M0_engineering_approval
-
 backtest_engine:
   name: freqtrade
   version: '2026.9'
-  repository_path: 'D:/file/freqtrade'
+  repository_path: D:/file/freqtrade
   repository_commit: 1f394eaebc2f46a83d26971388628707802f8602
-  python: 'D:/file/freqtrade/.venv/Scripts/python.exe'
+  python: D:/file/freqtrade/.venv/Scripts/python.exe
   trading_mode: futures
   margin_mode: isolated
   canonical_adapter_directory: research/freqtrade
@@ -155,34 +164,63 @@ backtest_engine:
   missing_mark_price_fill: forbidden
   execution_mode: research_backtest
   live_trading_enabled: false
-
 splits:
   method: chronological_walk_forward
   status: locked_for_first_round
   lock_basis: proposed_split_proceeded_after_user_continue
   range_semantics: '[start, end_exclusive)'
   walk_forward_dates:
-    - id: WF01
-      train: ['2024-01-01T00:00:00Z', '2025-01-01T00:00:00Z']
-      validation: ['2025-01-01T00:00:00Z', '2025-04-01T00:00:00Z']
-      test: ['2025-04-01T00:00:00Z', '2025-07-01T00:00:00Z']
-    - id: WF02
-      train: ['2024-01-01T00:00:00Z', '2025-04-01T00:00:00Z']
-      validation: ['2025-04-01T00:00:00Z', '2025-07-01T00:00:00Z']
-      test: ['2025-07-01T00:00:00Z', '2025-10-01T00:00:00Z']
-    - id: WF03
-      train: ['2024-01-01T00:00:00Z', '2025-07-01T00:00:00Z']
-      validation: ['2025-07-01T00:00:00Z', '2025-10-01T00:00:00Z']
-      test: ['2025-10-01T00:00:00Z', '2026-01-01T00:00:00Z']
-    - id: WF04
-      train: ['2024-01-01T00:00:00Z', '2025-10-01T00:00:00Z']
-      validation: ['2025-10-01T00:00:00Z', '2026-01-01T00:00:00Z']
-      test: ['2026-01-01T00:00:00Z', '2026-04-01T00:00:00Z']
+  - id: WF01
+    train:
+    - '2024-01-01T00:00:00Z'
+    - '2025-01-01T00:00:00Z'
+    validation:
+    - '2025-01-01T00:00:00Z'
+    - '2025-04-01T00:00:00Z'
+    test:
+    - '2025-04-01T00:00:00Z'
+    - '2025-07-01T00:00:00Z'
+  - id: WF02
+    train:
+    - '2024-01-01T00:00:00Z'
+    - '2025-04-01T00:00:00Z'
+    validation:
+    - '2025-04-01T00:00:00Z'
+    - '2025-07-01T00:00:00Z'
+    test:
+    - '2025-07-01T00:00:00Z'
+    - '2025-10-01T00:00:00Z'
+  - id: WF03
+    train:
+    - '2024-01-01T00:00:00Z'
+    - '2025-07-01T00:00:00Z'
+    validation:
+    - '2025-07-01T00:00:00Z'
+    - '2025-10-01T00:00:00Z'
+    test:
+    - '2025-10-01T00:00:00Z'
+    - '2026-01-01T00:00:00Z'
+  - id: WF04
+    train:
+    - '2024-01-01T00:00:00Z'
+    - '2025-10-01T00:00:00Z'
+    validation:
+    - '2025-10-01T00:00:00Z'
+    - '2026-01-01T00:00:00Z'
+    test:
+    - '2026-01-01T00:00:00Z'
+    - '2026-04-01T00:00:00Z'
   final_fit:
     id: FINAL
-    train: ['2024-01-01T00:00:00Z', '2026-01-01T00:00:00Z']
-    validation: ['2026-01-01T00:00:00Z', '2026-04-01T00:00:00Z']
-  final_holdout: ['2026-04-01T00:00:00Z', '2026-10-01T00:00:00Z']
+    train:
+    - '2024-01-01T00:00:00Z'
+    - '2026-01-01T00:00:00Z'
+    validation:
+    - '2026-01-01T00:00:00Z'
+    - '2026-04-01T00:00:00Z'
+  final_holdout:
+  - '2026-04-01T00:00:00Z'
+  - '2026-10-01T00:00:00Z'
   checkpoint_time_interpretation: earlier_folds_are_retrospective_research_training_cutoff_unproven
   fit_preprocessing_on: training_fold_only
   fit_model_on: training_fold_only
@@ -190,9 +228,8 @@ splits:
   label_availability_crossing_boundary_policy: purge
   selection_on_locked_test: forbidden
   threshold_selection_on_locked_test: forbidden
-
 frozen_representation:
-  enabled_in_current_stage: false
+  enabled_in_current_stage: true
   model:
     repository: NeoQuasar/Kronos-small
     revision: 901c26c1332695a2a8f243eb2f37243a37bea320
@@ -203,17 +240,27 @@ frozen_representation:
     context: historical_lookback_only
     std_function: numpy.std
     ddof: 0
-    epsilon: 0.00001
+    epsilon: 1.0e-05
     clip_abs: 5.0
   pooling: last_valid_hidden
-  inference_in_current_stage: forbidden
-  feature_extraction_in_current_stage: forbidden
-
+  inference_in_current_stage: allowed
+  feature_extraction_in_current_stage: allowed
+  inference_scope: development_history_encoding_only
+  backbone_training: forbidden
+  tokenizer_training: forbidden
+  future_path_generation: forbidden
+  protocol: research/configs/frozen_comparison_v1.yaml
 first_round_head:
   type: regularized_logistic_regression
-  C: [0.1, 1.0, 10.0]
+  C:
+  - 0.1
+  - 1.0
+  - 10.0
   decision_threshold: 0.5
-  seed_set: [17, 29, 43]
+  seed_set:
+  - 17
+  - 29
+  - 43
   record_all_attempts: true
   training_in_current_stage: allowed_for_E00_ordinary_features_only
   training_enabled_from_stage: 7
@@ -224,7 +271,6 @@ first_round_head:
   class_weight: null
   max_iter: 2000
   stress_policy: reuse_base_cost_trained_predictions_without_refit
-
 baselines:
   status: verified_development_only
   revision_run: research/runs/E00R_20261008_phase4_v1
@@ -234,64 +280,121 @@ baselines:
   results: research/initialization/E00_results.md
   initial_portfolio_USDT: 10000
   tradable_balance_ratio: 0.99
-  vol_target_annual: 0.20
+  vol_target_annual: 0.2
   vol_target_history_hours: 72
   annualization_hours: 8760
-  exposure_clip: [0.0, 1.0]
+  exposure_clip:
+  - 0.0
+  - 1.0
   buy_hold: long_from_first_eligible_entry_until_last_hour_open_of_each_test_segment
   test_portfolios: independent_reset_wallet_per_fold
   drawdown_basis: official_Freqtrade_closed_trade_equity_not_intrabar_mark_to_market
   required:
-    - cash
-    - buy_hold
-    - fixed_momentum
-    - constant_half_exposure
-    - vol_target
-    - ordinary_features_gate
-
+  - cash
+  - buy_hold
+  - fixed_momentum
+  - constant_half_exposure
+  - vol_target
+  - ordinary_features_gate
 experiments:
-  - id: E00
-    purpose: fixed_rule_baselines_and_ordinary_features_gate
-    status: completed_development_only
-    registry: research/registry/E00_20261008_phase4_v1.json
-    economic_screen_passed: true
-    information_value_over_cash: not_established_sparse_8_of_1091_participation
-    sparse_gate_diagnosis: research/initialization/E00_sparse_gate_diagnosis.md
-    predictive_validity: not_established_test_AUC_near_0_5
-    economic_screen_limitation: cash_also_passes_against_losing_momentum
-  - id: E01
-    purpose: ordinary_features_plus_frozen_Kronos_same_head
-    status: pending_run
-  - id: E02
-    purpose: ordinary_features_plus_random_frozen_backbone_same_head
-    tokenizer_policy: preserve_original_pretrained_tokenizer
-    status: pending_run
-  - id: E00R
-    purpose: net_return_ordinary_baseline_information_economic_and_noninformative_controls
-    status: completed_exploratory_development
-    registry: research/registry/E00R_20261008_phase4_v1.json
-    results: research/initialization/E00R_results.md
-    primary_features: ordinary19_with_original13_ablation
-    head: Ridge
-    information_value: not_established
-    profitability_over_cash: not_established
-
+- id: E00
+  purpose: fixed_rule_baselines_and_ordinary_features_gate
+  status: completed_development_only
+  registry: research/registry/E00_20261008_phase4_v1.json
+  economic_screen_passed: true
+  information_value_over_cash: not_established_sparse_8_of_1091_participation
+  sparse_gate_diagnosis: research/initialization/E00_sparse_gate_diagnosis.md
+  predictive_validity: not_established_test_AUC_near_0_5
+  economic_screen_limitation: cash_also_passes_against_losing_momentum
+- id: E01
+  purpose: ordinary_features_plus_frozen_Kronos_same_head
+  status: superseded_by_same_head_Ridge_frozen_development
+- id: E02
+  purpose: ordinary_features_plus_random_frozen_backbone_same_head
+  tokenizer_policy: preserve_original_pretrained_tokenizer
+  status: superseded_by_same_head_Ridge_frozen_development
+- id: E00R
+  purpose: net_return_ordinary_baseline_information_economic_and_noninformative_controls
+  status: completed_exploratory_development
+  registry: research/registry/E00R_20261008_phase4_v1.json
+  results: research/initialization/E00R_results.md
+  primary_features: ordinary19_with_original13_ablation
+  head: Ridge
+  information_value: not_established
+  profitability_over_cash: not_established
+- id: E01R
+  status: completed_exploratory_development
+  registry: research/registry/FROZEN_20261008_v1.json
+  results: research/initialization/FROZEN_results.md
+  head: Ridge
+  final_holdout_evaluated: false
+- id: E02R
+  status: completed_exploratory_development
+  registry: research/registry/FROZEN_20261008_v1.json
+  results: research/initialization/FROZEN_results.md
+  head: Ridge
+  final_holdout_evaluated: false
+- id: FROZEN_MLP
+  status: completed_exploratory_development
+  registry: research/registry/FROZEN_MLP_20261008_v2.json
+  results: research/runs/FROZEN_MLP_20261008_v2/results.md
+  head: MLP_16_Tanh_three_head_ensemble
+  final_holdout_evaluated: false
+- id: QUANT
+  run_id: QUANT_20261008_v1
+  status: completed_exploratory_development
+  registry: research/registry/QUANT_20261008_v1.json
+  results: research/runs/QUANT_20261008_v1/results.md
+  head: Ridge_same_coordinate_u20_vs_q20_plus_ordinary19
+  final_holdout_evaluated: false
 evaluation_readiness:
   data_integrity_accepted: true
   data_integrity_acceptance_scope: published_official_source_coverage_and_fidelity
   data_integrity_audit: research/initialization/data_integrity_audit.json
   remote_data_recheck: research/initialization/data_remote_recheck.json
   formal_evaluation_allowed: false
-  formal_evaluation_scope_note: final_holdout_remains_forbidden_until_E00_E01_E02_protocols_are_locked
+  formal_evaluation_scope_note: final_holdout_forbidden_in_this_task_even_after_common_protocol_lock
   development_E00_backtests_allowed: true
   final_holdout_evaluation_allowed: false
   ready_to_encode: true
   blockers: []
   M0_acceptance_report: research/initialization/M0_acceptance_report.json
   information_value_over_cash_established: false
-  next_research_action: lock_common_E00R_E01R_E02R_comparison_protocol_before_frozen_extraction
+  next_research_action: stop_current_frozen_task_review_complete_synthesis
   baseline_revision_research: research/initialization/baseline_revision_research.md
   baseline_revision_proposal: research/configs/baseline_revision_v2.yaml
-  baseline_revision_status: E00R_completed_exploratory_common_protocol_lock_pending
-  current_task_stop: before_any_frozen_representation_extraction
+  baseline_revision_status: E00R_completed_common_protocol_locked
+  current_task_stop: first_frozen_experiment_complete_holdout_and_weight_training_forbidden
   causality_report: research/initialization/e00_causality_report.json
+  common_protocol: research/configs/frozen_comparison_v1.yaml
+  common_protocol_sha256: f6e2e21863c5687a4129be750c1c16c17d9b3f647d7648006dd7006fcd1639d4
+  development_frozen_backtests_allowed: true
+  frozen_development_results: research/initialization/FROZEN_results.md
+  frozen_information_screen_passed: false
+  frozen_economic_information_gate_passed: false
+  frozen_economic_gate_passed: false
+  active_frozen_experiment: QUANT_20261008_v1
+  active_frozen_protocol: research/configs/frozen_quant_v1.yaml
+  active_frozen_protocol_sha256: fd2e0b9270ed28cbb501fb134540ff14c0eaf95b9d04e2ae3744579f16e2e76d
+  frozen_mlp_results: research/runs/FROZEN_MLP_20261008_v2/results.md
+  frozen_mlp_information_screen_passed: false
+  frozen_mlp_economic_information_gate_passed: false
+  frozen_mlp_economic_gate_passed: false
+  frozen_quant_results: research/runs/QUANT_20261008_v1/results.md
+  frozen_quant_screen_passed: false
+  frozen_quant_information_screens:
+    ridge_quant_continuous: false
+    ridge_quant_binary: false
+  frozen_quant_economic_screens:
+    ridge_quant_continuous:
+      rank50: false
+      economic: false
+    ridge_quant_binary:
+      rank50: false
+      economic: false
+  first_frozen_experiment_completed: true
+  first_frozen_experiment_conclusion: research/frozen/FIRST_EXPERIMENT_CONCLUSION.md
+frozen_readout_head:
+  type: Ridge
+  protocol: research/configs/frozen_quant_v1.yaml
+  training_scope: development_downstream_quantization_diagnostic_only

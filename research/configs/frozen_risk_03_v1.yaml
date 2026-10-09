@@ -1,0 +1,371 @@
+schema_version: 1
+experiment_id: FROZEN_RISK_03_v1
+stage: frozen_risk_independent_validation
+status: locked
+execution_scope: Phase_A_preflight_then_separate_explicit_approval_for_Phase_B
+hypothesis:
+  H1: R2 improves surprise-event AUROC over R1 on the reserved independent interval
+  H2: R2 improves surprise-event AUROC over nonlinear ordinary-only B2
+  H3: audit absolute RV magnitude/underestimation independently of ranking
+parent_experiment: FROZEN_RISK_02_v1
+parent_protocol_sha256: bc488c5bb9a3296340595e367c1c474d64f96c45e49c5249efc9f12a52d06425
+authority:
+  user_attachment_sha256: 6f55b7dc5a78a7761ce63efee2aae1876e8ba592a59f6596563864bb12ce7779
+  prompt_is_holdout_authorization: false
+  approval_phrase: 授权开启 FROZEN_RISK_03_v1 holdout，按已锁定协议执行正式测试。
+  authorized_scope_now:
+  - Stage1
+  - Stage2
+  - Stage3
+  - Stage4
+  - Stage5_submission
+  authorization_record: authorization/user_approval.json
+  sealed_bundle: preflight/sealed_bundle.json
+  require_protocol_code_dependency_input_hashes_before_open: true
+  one_shot: exclusive claim before any holdout request/read/encoding/prediction; no
+    retry once exposed; errors retained INVALIDATED
+  training_policy: PhaseA preview28 and PhaseB formal28 repeat identical predeclared
+    train/validation only; compare model/selection before test access
+roles:
+  train:
+  - '2024-01-01T00:00:00Z'
+  - '2026-03-01T00:00:00Z'
+  validation:
+  - '2026-03-01T00:00:00Z'
+  - '2026-04-01T00:00:00Z'
+  holdout:
+  - '2026-04-01T00:00:00Z'
+  - '2026-10-01T00:00:00Z'
+  test_quarters:
+  - id: TEST_Q2
+    start: '2026-04-01T00:00:00Z'
+    end_exclusive: '2026-07-01T00:00:00Z'
+  - id: TEST_Q3
+    start: '2026-07-01T00:00:00Z'
+    end_exclusive: '2026-10-01T00:00:00Z'
+scope_guards:
+  phase_a_max_time_exclusive: '2026-04-01T00:00:00Z'
+  phase_b_max_time_exclusive: '2026-10-01T00:00:00Z'
+  timestamp_before_numeric_parse: true
+  no_whole_csv_pandas_on_mixed_1h_snapshot: true
+  source_file_byte_hash_without_market_value_parse: metadata_only_permitted
+  quarter_labels_purged_on_end_and_available: true
+  test_values_before_explicit_approval: forbidden
+sources:
+  instrument: BTC-USDT-SWAP
+  exchange: OKX
+  one_hour_snapshot: research/data/snapshots/20261008T011408835523Z_7bb06df6f064
+  development_5m: research/runs/FROZEN_RISK_02_v1/data_5m
+  parent_cache: research/runs/FROZEN_20261008_v1/cache
+  five_minute_endpoint: https://www.okx.com/api/v5/market/history-candles
+  page_limit: 300
+  source_metadata: full raw response bytes URL collected UTC SHA256, real volCcy/volCcyQuote
+  missing_or_conflicting_data: uniform full coverage requirement; fail formal evaluation;
+    no interpolation/exclusions/1h label fallback
+timing:
+  decision_hours_utc:
+  - 4
+  - 12
+  - 20
+  availability_delay_seconds: 60
+  entry_after_boundary_hours: 1
+  horizon_hours: 4
+  lookback_1h_bars: 256
+  price_contract: P0=entry_bar_open; P1..P48=close_of_48_completed_5min_bars_with_open_in_[entry,entry+4h)
+  label_start: entry_at
+  label_end: entry_at+4h
+  labelable_at: label_end+60s
+  first_return: log(first_5m_close/entry_5m_open)
+  remaining_returns: 47 consecutive completed-close log ratios
+  microstructure_limit: OHLC traded first/last prices are not exact boundary ticks;
+    no orderbook or mark-price proxy
+  purge: label_end AND labelable_at strictly before role end; no cross-right-boundary
+  missing_bars: fail full-coverage audit; no interpolation or 1h fallback
+label:
+  name: RV_raw
+  formula: sum(48 natural-log traded-price returns squared)
+  unit: squared_log_return_4h_not_annualized
+  return_segments: 48
+  epsilon: 1.0e-12
+  effective_target: maximum(RV_raw,1e-12) for all losses and fitting; retain raw and
+    floor count
+  outliers: retain every valid positive-price observation; no winsorization
+encoding:
+  window_bars: 256
+  fields:
+  - open
+  - high
+  - low
+  - close
+  - volume
+  - amount
+  volume_alias: volCcy_BTC
+  amount_alias: volCcyQuote_USDT
+  normalization:
+    context: historical_lookback_only
+    std_function: numpy.std
+    ddof: 0
+    epsilon: 1.0e-05
+    clip_abs: 5.0
+  pooling: decode_s1_last_valid_context
+  hidden_width: 512
+  dtype: float32
+  autocast: false
+  tf32: false
+  atol: 0.0001
+  rtol: 0.0001
+  batch_size: 8
+  model_revision: 901c26c1332695a2a8f243eb2f37243a37bea320
+  tokenizer_revision: 0e0117387f39004a9016484a186a908917e22426
+  cache_reuse: check all chunks/hashes/contracts, all current windows/ids/keys, pinned
+    files and independent first/middle/last re-encoding for each variant
+features:
+  ordinary_count: 19
+  risk_count: 14
+  R1_count: 33
+  R2_R3_count: 545
+  risk_definitions:
+    log_rv4scaled_{4,24,168}h: log(max(4*mean(last_h_hour_close_to_close_returns_squared),epsilon))
+    log_mean_abs_return_{4,24,168}h: log(max(mean(last_h_absolute_hour_returns),epsilon))
+    log_parkinson4scaled_{4,24,168}h: log(max(4*mean(last_h_log_high_low_ratio_squared/(4*log(2))),epsilon))
+    log_rv_ratio_4h_24h: log_rv4scaled_4h-log_rv4scaled_24h
+    log_rv_ratio_24h_168h: log_rv4scaled_24h-log_rv4scaled_168h
+    tail_ratio_24h: max(abs(last24returns))/sqrt(max(mean(last24returns_squared),epsilon))
+    log_volume_ratio_4h_24h: log((mean_last4volume+epsilon)/(mean_last24volume+epsilon))
+    log_amount_ratio_4h_24h: log((mean_last4amount+epsilon)/(mean_last24amount+epsilon))
+  feature_information: only completed available 1h OHLCVA, no 5m input, no funding/profit/label/extra
+    state
+models:
+  linear_families:
+  - har
+  - R1
+  - R2
+  - random_s17
+  - random_s29
+  - random_s43
+  fixed_families:
+  - persistence
+  - ewma
+  R1: ordinary19 plus risk14 exactly 33
+  R2: R1 plus frozen512 exactly545
+  B2: only same33 R1 columns; no extra raw state
+  HAR: three log_rv4scaled_{4,24,168}h; same QLIKE head
+  persistence: sum(last4hour_close_to_close_returns_squared)
+  ewma: 4*normalized_weighted_mean(255 historical hourly return squares; most recent
+    weight1, decay .97)
+  ewma_decay: 0.97
+  random_seeds:
+  - 17
+  - 29
+  - 43
+  random_control: three individual models; mean of performance values only; no score
+    ensemble; auxiliary only
+  pretrained_tokenizer_retained_for_random: true
+head:
+  type: regularized_linear_log_link_QLIKE
+  dtype: float64
+  objective: mean(z+y_scaled*exp(-z))+lambda*sum(beta_squared)
+  intercept_penalized: false
+  scaler: training StandardScaler only; constant-column scale1
+  target_scale: training median effective RV; restore original variance units
+  lambda_candidates:
+  - 0.001
+  - 0.01
+  - 0.1
+  - 1.0
+  selection: validation_raw_QLIKE_only
+  tie_break: larger_lambda_exact_ties
+  solver: scipy_L-BFGS-B_analytic_gradient
+  initialization: beta0; intercept log(mean(y_scaled))
+  maxiter: 3000
+  maxls: 50
+  ftol: 1.0e-12
+  gtol: 1.0e-07
+  accept_gradient_max_abs: 1.0e-05
+  training_clipping: none; overflow trial rejected without changing objective
+  prediction_absolute_variance_floor: 1.0e-12
+  prediction_absolute_variance_ceiling: 1.0
+  prediction_clipping: apply identically to every model; record counts
+  failed_fit_policy: retain error and block engineering promotion; no search-space
+    expansion
+B2:
+  library: lightgbm
+  library_version: 4.6.0
+  isolated_dependency_path: provenance/python_packages
+  objective: gamma
+  metric: None
+  custom_validation_metric: raw_QLIKE_restored_absolute_units_and_same_fixed_clip
+  learning_rate: 0.05
+  num_boost_round_max: 300
+  early_stopping_rounds: 30
+  early_stopping_min_delta: 0.0
+  first_metric_only: true
+  num_leaves:
+  - 7
+  - 15
+  min_data_in_leaf:
+  - 30
+  - 60
+  selection: validation_raw_QLIKE_only
+  tie_break: lower_num_leaves_then_higher_min_data_in_leaf_exact_ties
+  target_scale: training_effective_RV_median_same_as_linear
+  params:
+    boosting_type: gbdt
+    objective: gamma
+    metric: None
+    learning_rate: 0.05
+    lambda_l2: 1.0
+    lambda_l1: 0.0
+    feature_fraction: 1.0
+    feature_fraction_bynode: 1.0
+    bagging_fraction: 1.0
+    bagging_freq: 0
+    seed: 17
+    data_random_seed: 17
+    feature_fraction_seed: 17
+    bagging_seed: 17
+    drop_seed: 17
+    extra_seed: 17
+    deterministic: true
+    device_type: cpu
+    num_threads: 1
+    force_col_wise: true
+    force_row_wise: false
+    max_depth: -1
+    max_bin: 255
+    min_data_in_bin: 3
+    bin_construct_sample_cnt: 200000
+    feature_pre_filter: false
+    min_sum_hessian_in_leaf: 0.001
+    min_gain_to_split: 0.0
+    boost_from_average: true
+    is_unbalance: false
+    use_missing: false
+    zero_as_missing: false
+    enable_bundle: false
+    histogram_pool_size: -1
+    verbosity: -1
+  record:
+  - every_iteration_train_and_validation_raw_QLIKE
+  - best_iteration
+  - full_model_text_effective_parameters
+  - all_four_structures
+  - wheel_and_native_DLL_sha256
+  capacity_limit: tree early-stopping is additional selection freedom, not identical
+    capacity or L2 semantics to linear heads
+budget:
+  phase_a_full_dev_preview_fits: 28
+  phase_b_formal_fits: 28
+  linear_families: 6
+  lambda_per_family: 4
+  B2_structures: 4
+  max_B2_training_iterations_per_phase: 1200
+  determinism_replays: one R2 and one B2 identical selected refit per phase, separately
+    journalled
+  no_parameter_or_family_expansion: true
+  failures_replays: retain every attempted call; no concealment; formal exposed errors
+    invalidate
+primary:
+  event: log((RV_raw+epsilon)/(same_ewma_prediction+epsilon)) > log(2)
+  score: log((model_prediction+epsilon)/(same_ewma_prediction+epsilon))
+  score_not_calibrated_probability: true
+  comparisons:
+  - R2_minus_R1
+  - R2_minus_B2
+  statistic: equal mean of within-quarter AUROC differences, not pooled six-month
+    AUROC
+  effect_minimum_absolute_AUROC: 0.03
+  confidence_lower_gt: 0.0
+  all_comparisons_pass_required: true
+  both_quarter_directions_positive_required: true
+  minimum_positive_and_negative_events_per_quarter: 10
+  multiple_comparisons: co-primary intersection rule; no auxiliary replacement or
+    extra success criteria
+bootstrap:
+  method: circular_stationary
+  paired: true
+  stratify_by: calendar_quarter
+  unit: full_UTC_decision_day
+  keep_calendar_days: true
+  primary_mean_block_days: 7
+  sensitivity_block_days:
+  - 3
+  - 14
+  iterations: 5000
+  seed: 20261008
+  confidence: 0.95
+  interval_method: percentile
+  stream_rule: seed+block_days*1000+quarter_index; same sampled dates for every model
+    and both comparisons
+  invalid_auc: NaN when a sampled quarter has one class; no0_or0.5_fill; no additional
+    redraws
+  valid_draw_rule: exact5000 attempted draws; percentile on joint valid draws; invalid
+    fraction>1% for any primary quarter/pooled=>INCONCLUSIVE
+  maximum_invalid_fraction: 0.01
+  save_all_draws_and_day_multiplicities: true
+  weighted_auc: exact duplicate-date sample weights with tie average; independently
+    check expanded sample sklearn/rank implementation
+auxiliary:
+  high_RV_threshold: train_effective_RV_q90; computed and sealed in PhaseA
+  extreme_RV_threshold: train_effective_RV_q99
+  variance_loss:
+  - raw_QLIKE
+  - QLIKE_Regret
+  - logRV_MSE
+  raw_QLIKE_percentage: forbidden
+  surprise_MSE_equivalence: log((RV_raw+eps)/(pred+eps)) squared; not independent
+    evidence from same-eps logMSE
+  logMSE_primary_epsilon: inherited log(max(RV_raw,eps))-log(clipped_pred); also report
+    additive-epsilon counterpart explicitly
+  risk_magnitude_red_flag: pooled_opportunity_weighted_R2_Regret > 1.10*R1_Regret
+  red_flag_prevents_absolute_RV_position_scaling_recommendation: true
+  low_risk_underestimate: prediction_RV/actual_effective_RV<0.5 within trainq90 highRV
+    subset; diagnostic only
+  calibration_bins: training model prediction deciles; surprise-score quartiles; no
+    test refit
+  historical_state_bins: training EWMA prediction quartiles; descriptive only, retain
+    all samples
+  rolling_loss: UTC decision-day loss sum/count, 7-day trailing calendar window
+  scores_timeline: each original prediction origin, no test score normalization
+status_rules:
+  priority:
+  - INVALIDATED
+  - INCONCLUSIVE_event_or_bootstrap
+  - RANKING_ONLY
+  - CONFIRMED_RANKING_INCREMENT
+  - NONLINEAR_BASELINE_COMPETITIVE
+  - NOT_SUPPORTED
+  - INCONCLUSIVE
+  INVALIDATED: causal/data/version/irreparable formal engineering failure or any formal
+    retry after exposure
+  RANKING_ONLY: both co-primary pass, but registered RISK_MAGNITUDE_RED_FLAG
+  CONFIRMED_RANKING_INCREMENT: both co-primary pass and no risk magnitude red flag;
+    does not assert safe risk management
+  NONLINEAR_BASELINE_COMPETITIVE: R2-R1 meets all primary criteria but R2-B2 does
+    not; failure to prove superiority is not equivalence
+  NOT_SUPPORTED: with adequate events/audits, any co-primary equal-quarter CI upper<=0;
+    or both CIs lower>0 but a mean increment below .03
+  INCONCLUSIVE: cross-zero/wide CIs, inconsistent quarter directions, insufficient
+    classes/valid draws, or remaining failure to meet joint criteria without clear
+    negative evidence
+  phase_a_research_result: NOT_EVALUATED_HOLDOUT_SEALED
+provenance:
+  parent_delivery: research/runs/FROZEN_RISK_02_v1/delivery_manifest.json
+  preflight_source_snapshot: preflight/sealed_source
+  formal_source_snapshot: provenance/formal_source
+  source_commit_and_dirty_hashes: true
+  preserve_library_and_native_files: true
+  checkpoint_training_cutoff: unproven; distinguish official public exact-weight existence
+    before holdout from training cutoff statement
+prohibited:
+- holdout_read_before_explicit_approval
+- backbone_or_tokenizer_training
+- new_frequency_window_target
+- unregistered_factors_heads_parameters_seeds
+- holdout_calibration_or_threshold_selection
+- revenue_promotion
+- Freqtrade_user_data_or_strategy_changes
+- live_connections
+- exchange_write
+- git_push
+- automatic_fourth_round

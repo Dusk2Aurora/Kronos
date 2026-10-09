@@ -84,3 +84,31 @@ tmp/
 /research/data/
 /research/cache/
 /research/runs/
+
+# Generated publications and immutable local provenance (see research/COMMIT_SCOPE.md)
+/output/
+/research/researchstate.json
+/research/state_history/
+/research/delivery/*/
+/research/m2_ci/phase_a_independent_review.json
+/research/registry/FROZEN_20261008_v1.json
+/research/registry/FROZEN_MLP_20261008_v1.json
+/research/registry/FROZEN_MLP_20261008_v2.json
+/research/registry/FROZEN_RISK_02_v1.json
+/research/registry/FROZEN_RISK_03_v1.json
+/research/registry/FROZEN_RISK_03_1_B5_v1.json
+/research/registry/QUANT_20261008_v1.json
+/research/registry/M2_CONDITIONAL_INCREMENT_01.json
+
+# Historical setup scripts contain private attachment paths; preserve sealed bytes locally
+/research/frozen/experiment_02/lock.py
+/research/frozen/experiment_03/lock.py
+/research/m2_ci/initialize.py
+/research/researchstate.py
+
+# Disposable development/test caches
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/

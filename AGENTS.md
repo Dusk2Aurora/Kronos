@@ -3,8 +3,9 @@
 ## 开始工作：先确认阶段和证据
 
 - 用中文沟通。先说明当前阶段、这一步的目的，再逐步报告实际进展和结果。
-- 每次开始先读 `research/initialization/TODO.md` 和 `research/configs/initial_experiment.yaml`，确认 stage、status、blockers、已验收项及本次范围。
-- 配置参数以 YAML 为准；阶段以 TODO 和配置为准；验收结论以对应 report、manifest 和原始来源为证据。发生冲突先核查，不凭本文件的快照推断已完成。
+- 每次开始先读 `research/initialization/TODO.md` 和 `research/configs/initial_experiment.yaml`；当前冻结阶段还须读 `research/frozen/TODO.md`，确认 stage、status、blockers、已验收项及本次范围。
+- 初始化 TODO 保留 M0 与交接前基线记录；冻结阶段进度、验收和下一步只在 `research/frozen/TODO.md` 维护，不继续追加到初始化 TODO。
+- 配置参数以 YAML 为准；阶段以当前阶段 TODO 和配置为准；验收结论以对应 report、manifest 和原始来源为证据。发生冲突先核查，不凭本文件的快照推断已完成。
 - 按需要读 `research/freqtrade/README.md`、`research/environment/README.md`、`research/registry/experiment_template.yaml`。
 - 脚本存在、命令成功或结构审计通过，不等于研究步骤完成或正式评估获准。
 - 常规实现、数据核验、证据整理可自主推进，不重复请求许可。涉及必要研究设计选择时，一次讨论一个问题，并继续不依赖该决定的工作。
@@ -17,7 +18,7 @@
 - 先做 E00：现金、买入持有、固定动量、半仓、波动率目标和普通特征门控基线。
 - 普通特征预测头从配置允许的阶段开始训练；不能把 Kronos 禁用误解为所有普通特征训练永久禁用。
 - M0 验收后做 E01：普通特征 + 预训练冻结 Kronos 表征；E02：普通特征 + 随机冻结骨干，保留原 tokenizer；维持同一预测头进行对照。
-- 当前研究目标止于冻结表征提取准备就绪；按配置验收 M0，不提前开展表征提取或骨干/tokenizer 训练、微调。后续范围以用户最新指令和阶段配置为准。
+- 用户2026-10-08授权的路线图第5章／M1第一项冻结实验有限研究已完成，完整结论见 [FIRST_EXPERIMENT_CONCLUSION.md](research/frozen/FIRST_EXPERIMENT_CONCLUSION.md)，当前配置状态为 `first_frozen_experiment_completed_holdout_sealed`，无待运行正式实验，等待用户验收。首轮Ridge、有限MLP与同坐标量化的信息／经济／量化可读性筛选均未通过；量化主rank50相对普通19项至少3/4折少亏及匹配数量正向信号保留，不能据此宣称盈利或量化瓶颈。停止当前BTC单资产、1h历史、4h固定动量参与任务上的扩头及冻结表征路线扩展；全部失败与历史证据保留，实时阶段以配置与冻结TODO为准。骨干／tokenizer训练、微调／解冻、原生路径生成、最终holdout、git push、部署与实盘仍禁用。
 - checkpoint 训练截止尚未得到证明时，早期折按历史研究解读，不宣称严格事前样本外。
 
 ## 数据、时序、标签和评估
